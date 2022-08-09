@@ -6,6 +6,7 @@ import { infuraProvider } from 'wagmi/providers/infura'
 import { publicProvider } from 'wagmi/providers/public'
 import { ChakraProvider, extendTheme } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
+import { OrbisProvider } from '~/contexts'
 
 // NEXT_PUBLIC_INFURA_ID comes from .env.local file and starts for infura project id ( api id )
 const infuraId = process.env.NEXT_PUBLIC_INFURA_ID as string
@@ -30,12 +31,14 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     })
 
     return (
-        <WagmiConfig client={wagmiClient}>
-            <RainbowKitProvider chains={chains}>
-                <ChakraProvider theme={theme}>
-                    <Component {...pageProps} />
-                </ChakraProvider>
-            </RainbowKitProvider>
-        </WagmiConfig>
+        <OrbisProvider>
+            <WagmiConfig client={wagmiClient}>
+                <RainbowKitProvider chains={chains}>
+                    <ChakraProvider theme={theme}>
+                        <Component {...pageProps} />
+                    </ChakraProvider>
+                </RainbowKitProvider>
+            </WagmiConfig>
+        </OrbisProvider>
     )
 }
