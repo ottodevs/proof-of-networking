@@ -64,7 +64,8 @@ Contracts were written with
 
 **How Unique**
 - There are no products that specialize in business-card-like use cases, such as actually meeting people face to face and recording the meeting for Web3 people.
-- Very fast and inexpensive social experience compared to simlar did project this isbecause we are building without relying on the blockchain using the Ceramic protocol while ensuring de-centralization. We are also able to customize the data indexing experience using Orbis.
+- Very fast and inexpensive social experience compared to simlar did project.
+    - This is because we are building without relying on the only blockchain using the Ceramic protocol while ensuring de-centralization. And. It's well optimized to query specific data in a very efficient way (we are optimizing it for the entire protocol)by using Orbis.SDK.
 - Minting SBT instead of NFT is to prove that users have actually met compared to personal POAP.
 
 
