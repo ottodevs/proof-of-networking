@@ -1,4 +1,4 @@
-# Port Protocol: Polygon BUIDL IT : Summer 2022
+# Proof-of-networking: Polygon BUIDL IT : Summer 2022
 
 Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
