@@ -17,7 +17,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 ## Solution
 
 - **User can own social graph relationship’s data**
-- **Best UX**
+- **Best UX for above usecases**
     - **You can combine all of your contact information into one profile.**
     - **You can also include other profile information in term of your identity and career.**
     - **Profile data is exchanged and stored with each other using QR codes.**
