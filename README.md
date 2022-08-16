@@ -22,6 +22,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
     - **You can also include other profile information in term of your identity and career.**
     - **Profile data is exchanged and stored with each other using QR codes.**
     - **Searchable Profile data.**
+    - **The issuance of SBTs to prove that they have met will make the connection between users stronger and more memorable and composable.**
 
 # Judges & Criteria
 
