@@ -11,6 +11,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
     - In Web2 implementation of platforms like Linkedin and Facebook User’s data is owned and gated by the app.
     
 - **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
+    - As current Alternatives, some of them are documenting everything on Memo app or Spreadsheet.
 
 
 ## Solution
