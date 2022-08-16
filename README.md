@@ -59,7 +59,7 @@ Contracts were written with
 
 
 **How Creative**
-- We develop this idea based on real customer challenges.
+- We develop this idea based on real customer problems.
 
 
 **How Unique**
