@@ -80,5 +80,11 @@ Contracts were written with
 
 ## 5. Our Roadmap
 
+1. Add more composable and sophisticated direct message functionality.
+2. Launch on Mobile App like iOS and Android.
+3. The current trade-offs in terms of attack vectors, potential future integration of ZK proofs to enhance privacy.
 
 ## 6. Frequently questions.
+
+Q1. Why this solution should work as a replacement for personal POAPs
+A1. Test
