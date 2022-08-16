@@ -13,7 +13,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 
 
-## ①Technological Implementation
+## 1. Technological Implementation
 
 The stack: Front-End: NextJS, React, Typescript, Rainbowkit/Wagmi, Turborepo/pnpm Contracts: Solidity Back-End: Ceramic, Orbis, IPFS
 
@@ -35,11 +35,17 @@ Contracts were written with
 ### Use of AWS
 
 
-## ②Design
+## 2. Design
 
 
-## ③Potential Impact
+## 3. Potential Impact
 
 
 
-## ④Quality of the Idea
+## 4. Quality of the Idea
+
+
+## 5. Our Roadmap
+
+
+## 6. Frequently questions.
