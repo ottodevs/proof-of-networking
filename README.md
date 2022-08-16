@@ -67,6 +67,10 @@ Contracts were written with
     - POAP is optimized for conference attendance verification, others are optimized for profile functions only, Gitcoin Passport is optimized for Gitcoin, Telegram and Twitter are optimized for Web2 messaging and social networking experiences.
 - Very fast and inexpensive social experience compared to simlar did project.
     - This is because we are building without relying on the only blockchain using the Ceramic protocol while ensuring de-centralization. And. It's well optimized to query specific data in a very efficient way (we are optimizing it for the entire protocol)by using OrbisSDK compared to similar project by using only Ceramic itself.
+
+- More Data potability
+    - This design decision would keep interoperability with all products built on top of Ceramic, Orbis.sdk, orbis.club included, while extending the usecase for our digital business card product (it is kind of personal POAPS + decentralized business card), we call it Proof of Networking.
+
 - Minting SBT instead of NFT is to prove that users have actually met compared to personal POAP.
 
 
