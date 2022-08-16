@@ -1,4 +1,4 @@
-# Proof-of-networking: Polygon BUIDL IT : Summer 2022
+# Proof-of-Networking: Polygon BUIDL IT : Summer 2022
 
 Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
@@ -7,6 +7,10 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ## Problem
 
+- **Centralization**
+    - In Web2 implementation of platforms like Linkedin and Facebook User’s data is owned and gated by the app.
+    
+- **It’s hard to remember everyone we meet at events and re-connect later.**
 
 
 ## Solution
