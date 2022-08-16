@@ -58,19 +58,21 @@ Contracts were written with
 ## 4. Quality of the Idea
 
 
-**How creative**
+**How Creative**
 - We develop this idea based on real customer challenges.
 
 
 **How Unique**
 - There are no products that specialize in business-card-like use cases, such as actually meeting people face to face and recording the meeting for Web3 people.
-- Very fast and inexpensive social experience compared to simlar did project this isbecause we are building without relying on the blockchain using the Ceramic protocol while ensuring de-centralization. We are also able to customize the data indexing experience using Orbis..
+- Very fast and inexpensive social experience compared to simlar did project this isbecause we are building without relying on the blockchain using the Ceramic protocol while ensuring de-centralization. We are also able to customize the data indexing experience using Orbis.
+- Minting SBT instead of NFT is to prove that users have actually met compared to personal POAP.
+
 
 
 
 # Appendix
 
-## Our Roadmap
+## 5. Our Roadmap
 
 
-## Frequently questions.
+## 6. Frequently questions.
