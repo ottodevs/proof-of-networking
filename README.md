@@ -45,7 +45,9 @@ Contracts were written with
 ## 4. Quality of the Idea
 
 
-## 5. Our Roadmap
+# Appendix
+
+## Our Roadmap
 
 
-## 6. Frequently questions.
+## Frequently questions.
