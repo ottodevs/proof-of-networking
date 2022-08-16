@@ -10,7 +10,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 
 
-## Implementation
+## ①Technological Implementation
 
 
 ### Smart Contract Architecture
@@ -26,3 +26,13 @@ Contracts were written with
 
 
 ### Use of AWS
+
+
+## ②Design
+
+
+## ③Potential Impact
+
+
+
+## ④Quality of the Idea
