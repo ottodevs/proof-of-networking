@@ -11,7 +11,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ## Solution
 
-
+# Judges & Criteria
 
 ## 1. Technological Implementation
 
