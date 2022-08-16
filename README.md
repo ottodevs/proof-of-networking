@@ -10,7 +10,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 - **Centralization**
     - In Web2 implementation of platforms like Linkedin and Facebook User’s data is owned and gated by the app.
     
-- **It’s hard to remember everyone we meet at events and re-connect later.**
+- **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
 
 
 ## Solution
