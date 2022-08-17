@@ -59,9 +59,9 @@ Contracts were written with
 ## 2. Design
 
 ### Part 2: UX Problem Statement for an audience with little to no web3 awareness
-- Be faster and cheaper than other Web3 products while maintaining elements of data ownership and decentralization
-        - test
 
+- Be faster and cheaper than other Web3 products while maintaining elements of data ownership and decentralization.
+    - test.
 
 
 ## 3. Potential Impact
