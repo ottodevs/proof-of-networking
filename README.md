@@ -58,7 +58,7 @@ Contracts were written with
 
 ## 2. Design
 
-###Part 2: UX Problem Statement for an audience with little to no web3 awareness
+### Part 2: UX Problem Statement for an audience with little to no web3 awareness
 - test.
 
 
@@ -66,12 +66,12 @@ Contracts were written with
 ## 3. Potential Impact
 
 ### ①Accelerating better encounters between people involved in Web3 can accelerate innovation in the ecosystem.
-- test.
+- We are building a world where people have a clearer, more transparent, best version of themselves, are more passionate about the status of the things they care about, and can find others who are working on the same issues. This is because by using our products, we can bring better encounters to the people involved in Web3. The moment when an idea evolves into a discontinuity is largely a result of encounters between people.
 
 ### ②Reinventing Web2Social puts the power back in the hands of the user.
 - test.
 
-### ③.
+### ③.It will be a digital representation of an individual that does not rely on personally identifiable information (PII) such as name, gender, nationality, passport number, etc.
 - test.
 
 ## 4. Quality of the Idea
