@@ -8,7 +8,8 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ## 🚀 **Our Challenge for Hackathon**
 
-### Web3 Integration in Web2
+### - Web3 Integration in Web2 - Build the Web3 version of your favorite Web2 product.
+### - Nfts - Combine creativity with Engineering to build awesome NFT dApps.
 
 ## Pitch & Live Demo (Video)
 
