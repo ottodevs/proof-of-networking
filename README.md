@@ -93,9 +93,23 @@ Contracts were written with
 **How creatvie and unique**
 - test.
 
-2. Launch on Mobile App like iOS and Android.
-3. The current trade-offs in terms of attack vectors, potential future integration of ZK proofs to enhance privacy.
-4. Adding Timeline feature for users.
+### 2. Launch on Mobile App like iOS and Android..
+
+**How creatvie and unique**
+- test.
+
+### 3. The current trade-offs in terms of attack vectors, potential future integration of ZK proofs to enhance privacy.
+
+**How creatvie and unique**
+- test.
+- 
+
+### 4. Adding Timeline feature for users.
+
+**How creatvie and unique**
+- test.
+- 
+
 
 ## 6. Frequently questions.
 
