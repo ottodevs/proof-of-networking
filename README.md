@@ -169,3 +169,6 @@ Contracts were written with
 
 - Twitter
 - Discord
+- Figma
+- Medium
+- WhitePaper
