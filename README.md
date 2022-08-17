@@ -61,7 +61,8 @@ Contracts were written with
 ### Part 2: UX Problem Statement for an audience with little to no web3 awareness
 
 - Be faster and cheaper than other Web3 products while maintaining elements of data ownership and decentralization.
-    - test.
+    - We are able to optimize the data indexing experience.
+    - It's a choice for users whether or not to issue an SBT.
 
 
 ## 3. Potential Impact
