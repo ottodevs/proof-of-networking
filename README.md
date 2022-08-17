@@ -92,23 +92,23 @@ Contracts were written with
 
 ## 5. Our Roadmap
 
-### 1. Adding more composable and sophisticated direct message functionality.
+### ①Adding more composable and sophisticated direct message functionality.
 
 **How creatvie and unique**
 - test.
 
-### 2. Launch on Mobile App like iOS and Android..
+### ②Launch on Mobile App like iOS and Android..
 
 **How creatvie and unique**
 - test.
 
-### 3. The current trade-offs in terms of attack vectors, potential future integration of ZK proofs to enhance privacy.
+### ③The current trade-offs in terms of attack vectors, potential future integration of ZK proofs to enhance privacy.
 
 **How creatvie and unique**
 - test.
 - 
 
-### 4. Adding Timeline feature for users.
+### ④Adding Timeline feature for users.
 
 **How creatvie and unique**
 - test.
