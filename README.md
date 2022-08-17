@@ -58,13 +58,20 @@ Contracts were written with
 
 ## 2. Design
 
+###Part 2: UX Problem Statement for an audience with little to no web3 awareness
+- test.
+
+
 
 ## 3. Potential Impact
 
 ### ①Accelerating better encounters between people involved in Web3 can accelerate innovation in the ecosystem.
 - test.
 
-### ②Accelerating better encounters between people involved in Web3 can accelerate innovation in the ecosystem.
+### ②Reinventing Web2Social puts the power back in the hands of the user.
+- test.
+
+### ③.
 - test.
 
 ## 4. Quality of the Idea
@@ -119,3 +126,5 @@ Contracts were written with
 
 Q1. Why this solution should work as a replacement for personal POAPs
 A1. Test
+
+## 7. Resourses.
