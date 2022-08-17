@@ -2,14 +2,14 @@
 
 Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
-## Statement
+## 🚀Statement
 
 ### We are eager to continue the project after the hackathon in order to actually launch it in the world.
 
 ## Pitch & Live Demo (Video)
 
 
-## Problem
+## 💬Problem
 
 - **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
     - As current Alternatives, some of them are documenting everything on Memo app or Spreadsheet.
@@ -45,7 +45,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 - Technologies: We are deployed on Polygon. We have ERC for test.
 
 
-### Smart Contract Architecture
+### 📄Smart Contract Architecture
 
 Contracts were written with 
 
@@ -129,9 +129,9 @@ Contracts were written with
 
 
 
-# Appendix
+# 📓Appendix
 
-## 5. Our Roadmap
+## 5. Our Product Roadmap
 
 ### ①Adding more composable and sophisticated direct message functionality.
 
