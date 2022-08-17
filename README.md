@@ -2,7 +2,7 @@
 
 Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
-## 🚀Statement
+## 🚀**Statement**
 
 ### We are eager to continue the project after the hackathon in order to actually launch it in the world.
 
