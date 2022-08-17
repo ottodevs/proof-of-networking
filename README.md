@@ -1,4 +1,4 @@
-# Proof-of-Networking: Polygon BUIDL IT : Summer 2022
+# 🤝 **Proof-of-Networking: Polygon BUIDL IT : Summer 2022**
 
 Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
@@ -28,7 +28,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
         - In Web2 implementation of platforms like Linkedin and Facebook User’s data is owned and gated by the app.
 
 
-## Solution
+## 💡 **Solution**
 
 - **Best UX for above usecases**
     - **You can combine all of your contact information into one profile.**
@@ -39,7 +39,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 - **User can own social graph relationship’s data**
 
-# Judges & Criteria
+# 🤔Judges & Criteria
 
 ## 1. Technological Implementation
 
