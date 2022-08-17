@@ -54,17 +54,16 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 Contracts were written with 
 
 
-### Use of Polygon
+### Use of Polygon：Deployed to Polygon to issue SBTs to prove that users have met each other.
 
 
-
-### Use of IPFS
-
-
-### Use of AWS
+### Use of IPFS：We used IPFS to store the user's Avatar data and metadata.
 
 
-### Use of Ceramic and Orbis
+### Use of AWS：Route53 was used to make the domain easy to understand.
+
+
+### We used Orbis on Ceramic for both fast and cheap UX and data portability.
 
 
 ## 2. Design
