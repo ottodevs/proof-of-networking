@@ -39,7 +39,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 - **User can own social graph relationship’s data**
 
-# 🤔Judges & Criteria
+# 🤔 **Judges & Criteria**
 
 ## 1. Technological Implementation
 
