@@ -135,7 +135,7 @@ Contracts were written with
 **How creatvie and unique**
 - test.
 
-### ②Launch on Mobile App like iOS and Android..
+### ②Launch on Mobile App like iOS and Android.
 
 **How creatvie and unique**
 - test.
