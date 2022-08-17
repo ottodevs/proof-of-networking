@@ -61,7 +61,11 @@ Contracts were written with
 
 ## 3. Potential Impact
 
+### ①Accelerating better encounters between people involved in Web3 can accelerate innovation in the ecosystem.
+- test.
 
+### ②Accelerating better encounters between people involved in Web3 can accelerate innovation in the ecosystem.
+- test.
 
 ## 4. Quality of the Idea
 
