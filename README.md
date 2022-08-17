@@ -7,8 +7,13 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ## Problem
 
-- **Centralization**
-    - In Web2 implementation of platforms like Linkedin and Facebook User’s data is owned and gated by the app.
+- **Web2 Social Media is Broken**
+    - Networks Sell your Data
+        - You pay with your personal information to utilize their services. There is no digital Privacy.
+    - User Data is Centralized
+        - Data is controlled by one party largely behind closed doors, making it susceptible to attacks.
+    - User Data is Not Portable
+        - In Web2 implementation of platforms like Linkedin and Facebook User’s data is owned and gated by the app.
     
 - **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
     - As current Alternatives, some of them are documenting everything on Memo app or Spreadsheet.
