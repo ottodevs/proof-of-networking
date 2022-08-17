@@ -14,6 +14,9 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ## 🎬 **Pitch & Live Demo (Video)**
 
+<iframe width="560" height="315" src="https://youtu.be/MgAR8_WMgeE" frameborder="0" allowfullscreen></iframe>
+
+
 ## 💬 **Problem**
 
 - **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
