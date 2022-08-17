@@ -58,11 +58,36 @@ Contracts were written with
 
 ## 2. Design
 
-### Part 2: UX Problem Statement for an audience with little to no web3 awareness
+### ①High Fidelity working prototype
 
+- test.
+    - test.
+    test.
+
+### ②Presentation of Case Study
+
+- test.
+    - test.
+    test.
+
+### ③User flow and thought process
+
+- test.
+    - test.
+    test.
+
+### ④Branding and Design
+
+**Part 2: UX Problem Statement for an audience with little to no web3 awareness**
 - Be faster and cheaper than other Web3 products while maintaining elements of data ownership and decentralization.
     - We are able to optimize the data indexing experience.
     - It's a choice for users whether or not to issue an SBT.
+
+### ⑤Problem-solving
+
+- test.
+    - test.
+   
 
 
 ## 3. Potential Impact
@@ -126,7 +151,12 @@ Contracts were written with
 
 ## 6. Frequently questions.
 
-Q1. Why this solution should work as a replacement for personal POAPs
-A1. Test
+<details>
+    <summary>Q1. Why this solution should work as a replacement for personal POAPs</summary>
+    A1.折りたたむ（クリックしたら表示される）テキスト
+</details>    
 
 ## 7. Resourses.
+
+Twitter：
+Discord：
