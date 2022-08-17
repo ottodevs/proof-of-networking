@@ -56,15 +56,23 @@ Contracts were written with
 
 ### Use of Polygon：Deployed to Polygon to issue SBTs to prove that users have met each other.
 
+- test
+    - test
 
 ### Use of IPFS：We used IPFS to store the user's Avatar data and metadata.
 
+- test
+    - test
 
 ### Use of AWS：Route53 was used to make the domain easy to understand.
 
+- test
+    - test
 
 ### We used Orbis on Ceramic for both fast and cheap UX and data portability.
 
+- test
+    - test
 
 ## 2. Design
 
