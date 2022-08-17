@@ -6,12 +6,13 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ### We are eager to continue the project after the hackathon in order to actually launch it in the world.
 
-## 🚀 **Our Challenge for Hackathon**
+## 🔥 **Our Challenge for Hackathon**
 
-- Web3 Integration in Web2 - Build the Web3 version of your favorite Web2 product.
-- Nfts - Combine creativity with Engineering to build awesome NFT dApps.
+- **Web3 Integration in Web2** - Build the Web3 version of your favorite Web2 product.
+- **Nfts** - Combine creativity with Engineering to build awesome NFT dApps.
+- **Designathon**
 
-## Pitch & Live Demo (Video)
+## 🎬 **Pitch & Live Demo (Video)**
 
 ## 💬 **Problem**
 
