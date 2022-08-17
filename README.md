@@ -42,7 +42,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 - Front-End: NextJS, React, Typescript, Rainbowkit/Wagmi, Pixelated style 
 - Contracts: Solidity 
 - Back-End: Ceramic, Orbis, IPFS
-- Technologies: We are deployed on Polygon. We have ERC for  and  : all metadata is stored in IPFS
+- Technologies: We are deployed on Polygon. We have ERC for test.
 
 
 ### Smart Contract Architecture
@@ -58,6 +58,7 @@ Contracts were written with
 
 
 ### Use of AWS
+
 
 ### Use of Ceramic and Orbis
 
