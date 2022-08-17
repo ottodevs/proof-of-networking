@@ -98,7 +98,7 @@ Contracts were written with
 ### ②Reinventing Web2Social puts the power back in the hands of the user.
 - test.
 
-### ③.It will be a digital representation of an individual that does not rely on personally identifiable information (PII) such as name, gender, nationality, passport number, etc.
+### ③It will be a digital representation of an individual that does not rely on personally identifiable information (PII) such as name, gender, nationality, passport number, etc.
 - test.
 
 ## 4. Quality of the Idea
