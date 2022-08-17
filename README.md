@@ -178,8 +178,8 @@ Contracts were written with
 
 ## 7. Resourses.
 
-- [Twitter](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
-- [Discord](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+- [Twitter](https://twitter.com/PoNWeb3)
+- [Discord](https://discord.gg/dqDRj6GW3h)
 - [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
 - Medium:Coming soon
 - WhitePaper:Coming soon
