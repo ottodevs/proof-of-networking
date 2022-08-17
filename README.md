@@ -71,9 +71,8 @@ Contracts were written with
 
 ### ①High Fidelity working prototype
 
-- test.
-    - test.
-    test.
+- Try out the demo about the design and flow of the project at [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+    
 
 ### ②Presentation of Case Study
 
