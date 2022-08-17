@@ -7,6 +7,9 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ## Problem
 
+- **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
+    - As current Alternatives, some of them are documenting everything on Memo app or Spreadsheet.
+
 - **Web2 Social Media is Broken**
     - Networks Sell your Data
         - You pay with your personal information to utilize their services. There is no digital Privacy.
@@ -14,20 +17,18 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
         - Data is controlled by one party largely behind closed doors, making it susceptible to attacks.
     - User Data is Not Portable
         - In Web2 implementation of platforms like Linkedin and Facebook User’s data is owned and gated by the app.
-    
-- **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
-    - As current Alternatives, some of them are documenting everything on Memo app or Spreadsheet.
 
 
 ## Solution
 
-- **User can own social graph relationship’s data**
 - **Best UX for above usecases**
     - **You can combine all of your contact information into one profile.**
     - **You can also include other profile information in term of your identity and career.**
     - **Profile data is exchanged and stored with each other using QR codes.**
     - **Searchable Profile data.**
     - **The issuance of SBTs to prove that they have met will make the connection between users stronger and more memorable and composable.**
+
+- **User can own social graph relationship’s data**
 
 # Judges & Criteria
 
@@ -51,6 +52,8 @@ Contracts were written with
 
 
 ### Use of AWS
+
+### Use of Ceramic and Orbis
 
 
 ## 2. Design
