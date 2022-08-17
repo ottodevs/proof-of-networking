@@ -171,8 +171,8 @@ Contracts were written with
 
 ## 7. Resourses.
 
-- Twitter
-- Discord
-- Figma
-- Medium
-- WhitePaper
+- [Twitter](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+- [Discord](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+- [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+- [Medium](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+- [WhitePaper](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
