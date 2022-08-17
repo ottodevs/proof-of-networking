@@ -152,9 +152,9 @@ Contracts were written with
 ## 6. Frequently questions.
 
 <details>
-    ### Q1. Why this solution should work as a replacement for personal POAPs
+    <summary>Q1. Why this solution should work as a replacement for personal POAPs</summary>
     <div>
-        A1.折りたたむ（クリックしたら表示される）テキスト
+        A1. 折りたたむ（クリックしたら表示される）テキスト
     </div>
 </details>    
 
