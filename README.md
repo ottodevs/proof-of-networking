@@ -8,8 +8,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ## Pitch & Live Demo (Video)
 
-
-## 💬Problem
+## 💬 **Problem**
 
 - **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
     - As current Alternatives, some of them are documenting everything on Memo app or Spreadsheet.
@@ -44,8 +43,7 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 - Back-End: Ceramic, Orbis, IPFS
 - Technologies: We are deployed on Polygon. We have ERC for test.
 
-
-### 📄Smart Contract Architecture
+### 📄 **Smart Contract Architecture**
 
 Contracts were written with 
 
@@ -129,7 +127,8 @@ Contracts were written with
 
 
 
-# 📓Appendix
+# 📓 **Appendix**
+
 
 ## 5. Our Product Roadmap
 
