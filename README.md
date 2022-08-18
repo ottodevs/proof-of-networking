@@ -150,7 +150,7 @@ Contracts were written with
 ### ①Adding more composable and sophisticated direct message functionality.
 
 **How creatvie and unique**
-- test.
+- Telegram, Discord, Twitter, Messenger, Linkedin, What's app, Slack, LINE, WeChat, etc... Web2 has too many messaging tools that run on completely different protocols.There are some contexts for which data-portability will have more value than others, for example let's take DMs, the great benefit of composability is that you can bring your direct messages from one app to another and pick the user experience you like the most. For a platform dedicated 100% to video like youtube the data-portability would be useful to allow your followers to watch your content from any video app they want to (they aren't locked into one application)
 
 ### ②Launch on Mobile App like iOS and Android.
 
