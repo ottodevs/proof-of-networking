@@ -92,9 +92,8 @@ Contracts were written with
 
 ### ③User flow and thought process
 
-- test.
+- Try out the demo about the User flow Process at [Miro](https://miro.com/app/board/uXjVPfrhW_M=/)
     - test.
-    test.
 
 ### ④Branding and Design
 
