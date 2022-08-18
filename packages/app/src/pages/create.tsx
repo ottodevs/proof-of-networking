@@ -1,4 +1,4 @@
-import UserForm from '../components/userForm'
+import UserForm from '../components/UserForm'
 
 export default function Create() {
     return (
