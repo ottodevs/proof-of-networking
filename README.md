@@ -16,6 +16,10 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/MgAR8_WMgeE/0.jpg)](http://www.youtube.com/watch?v=MgAR8_WMgeE)
 
+<div>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/MgAR8_WMgeE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
 
 ## 💬 **Problem**
 
