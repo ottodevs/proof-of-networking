@@ -92,7 +92,7 @@ Contracts were written with
 
 ### ③User flow and thought process
 
-- Try out the demo about the User flow Process at [Miro](https://miro.com/app/board/uXjVPfrhW_M=/)
+- Try out the demo about the user flow and thought process at [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41) and [Miro](https://miro.com/app/board/uXjVPfrhW_M=/) and [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
     - test.
 
 ### ④Branding and Design
