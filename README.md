@@ -155,7 +155,7 @@ Contracts were written with
 ### ②Launch on Mobile App like iOS and Android.
 
 **How creatvie and unique**
-- test.
+- To make Web3Social's products a product market fit for consumers, it is necessary to achieve a better UX, and a mobile experience is essential to this. There are only a few projects in the industry that are able to combine data portability and mobile.
 
 ### ③The current trade-offs in terms of attack vectors, potential future integration of ZK proofs to enhance privacy.
 
