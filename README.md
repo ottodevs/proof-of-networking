@@ -81,7 +81,7 @@ Contracts were written with
 
 ### ①High Fidelity working prototype
 
-- Try out the demo about the design and flow of the project at [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+- Try out the demo about the design and flow of the project at [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1).
     
 
 ### ②Presentation of Case Study
@@ -92,7 +92,7 @@ Contracts were written with
 
 ### ③User flow and thought process
 
-- Try out the demo about the user flow and thought process at [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41) and [Miro](https://miro.com/app/board/uXjVPfrhW_M=/) and [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+- Try out the demo about the user flow and thought process at [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41) and [Miro](https://miro.com/app/board/uXjVPfrhW_M=/) and [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1).
     - test.
 
 ### ④Branding and Design
@@ -183,5 +183,8 @@ Contracts were written with
 - [Twitter](https://twitter.com/PoNWeb3)
 - [Discord](https://discord.gg/dqDRj6GW3h)
 - [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
+- [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41)
+- [Miro](https://miro.com/app/board/uXjVPfrhW_M=/) 
 - Medium:Coming soon
 - WhitePaper:Coming soon
+- 
