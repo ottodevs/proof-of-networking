@@ -92,7 +92,7 @@ Contracts were written with
 
 ### ③User flow and thought process
 
-- Try out the demo about the user flow and thought process at [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41) and [Miro](https://miro.com/app/board/uXjVPfrhW_M=/) and [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1).
+- Try out the demo about the user flow and thought process at [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41) and [Miro]([https://miro.com/app/board/uXjVPfrhW_M=/](https://miro.com/app/board/uXjVPfrhW_M=/?share_link_id=58842346750)) and [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1).
     - test.
 
 ### ④Branding and Design
@@ -124,7 +124,7 @@ Contracts were written with
 
 
 **How Creative**
-- We develop this idea based on real customer problems.
+- We develop this idea based on real customer problems. We describe [here](https://www.notion.so/049750256bb34ba29f6a9feb70c93f75?v=d3a37aee9db345fe9569cb7e79cae048) the differences between us and other projects we have researched.
 
 
 **How Unique**
@@ -184,7 +184,7 @@ Contracts were written with
 - [Discord](https://discord.gg/dqDRj6GW3h)
 - [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
 - [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41)
-- [Miro](https://miro.com/app/board/uXjVPfrhW_M=/) 
+- [Miro]([https://miro.com/app/board/uXjVPfrhW_M=/](https://miro.com/app/board/uXjVPfrhW_M=/?share_link_id=58842346750) 
 - Medium:Coming soon
 - WhitePaper:Coming soon
 - 
