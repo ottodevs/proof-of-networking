@@ -184,7 +184,7 @@ Contracts were written with
 - [Discord](https://discord.gg/dqDRj6GW3h)
 - [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1)
 - [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41)
-- [Miro](https://miro.com/app/board/uXjVPfrhW_M=/](https://miro.com/app/board/uXjVPfrhW_M=/?share_link_id=58842346750) 
+- [Miro](https://miro.com/app/board/uXjVPfrhW_M=/?share_link_id=58842346750) 
 - Medium:Coming soon
 - WhitePaper:Coming soon
 - 
