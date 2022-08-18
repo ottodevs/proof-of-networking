@@ -86,14 +86,14 @@ Contracts were written with
 
 ### ②Presentation of Case Study
 
-- test.
+- こういった理由で、ここに課題があると特定し、〜が解決策になるという仮説をたてた。
     - test.
     test.
 
 ### ③User flow and thought process
 
-- Try out the demo about the user flow and thought process at [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41) and [Miro]([https://miro.com/app/board/uXjVPfrhW_M=/](https://miro.com/app/board/uXjVPfrhW_M=/?share_link_id=58842346750)) and [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1).
-    - test.
+- Try out the demo about the user flow and thought process at [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41) and [Miro](https://miro.com/app/board/uXjVPfrhW_M=/?share_link_id=58842346750) and [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1).
+   
 
 ### ④Branding and Design
 
@@ -104,7 +104,7 @@ Contracts were written with
 
 ### ⑤Problem-solving
 
-- test.
+- 課題は〜であり、解決策はなにである。だから、以下の解決策を提案している。
     - test.
    
 
