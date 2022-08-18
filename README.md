@@ -178,7 +178,11 @@ Contracts were written with
     </div>
 </details>    
 
-## 7. Resourses.
+## 7. Team Members
+
+
+
+## 8. Resourses.
 
 - [Twitter](https://twitter.com/PoNWeb3)
 - [Discord](https://discord.gg/dqDRj6GW3h)
