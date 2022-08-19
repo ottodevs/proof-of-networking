@@ -47,9 +47,9 @@
     // files to exclude from search
     "search.exclude": {
         "**/node_modules": true,
-        "dist": true,
-        "build": true,
-        ".next": true
+        "**/dist": true,
+        "**/build": true,
+        "**/.next": true
     },
 
     // nest some config files https://github.com/antfu/vscode-file-nesting-config
