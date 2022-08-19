@@ -34,14 +34,6 @@ const Home: NextPage = () => {
 
     return (
         <>
-            <Head>
-                <link rel='preconnect' href='https://fonts.googleapis.com' />
-                <link rel='preconnect' href='https://fonts.gstatic.com' />
-                <link
-                    href='https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap'
-                    rel='stylesheet'
-                />
-            </Head>
             <Container maxW={'3xl'}>
                 <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 20 }}>
                     <Heading fontWeight={600} fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }} lineHeight={'90%'}>
