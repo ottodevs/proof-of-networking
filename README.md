@@ -1,10 +1,10 @@
-# 🤝 **Proof-of-Networking: Polygon BUIDL IT : Summer 2022**
+# 🤝 **PoN: Polygon BUIDL IT : Summer 2022**
 
 Try out the demo, which [is hosted live here!](https://ceramic.network/)
 
 ## 🚀 **Statement**
 
-### We are eager to continue the project after the hackathon in order to actually launch it in the world.
+**We are eager to continue the project after the hackathon in order to actually launch it in the world.**
 
 ## 🔥 **Our Challenge for Hackathon**
 
@@ -13,6 +13,8 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 - **Designathon**
 
 ## 🎬 **Pitch & Live Demo (Video)**
+
+PoN is a Dapp used by people in the web3 industry attending the conference to exchange contact information with people they meet in a more efficient and enjoyable way.
 
 [![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/MgAR8_WMgeE/0.jpg)](http://www.youtube.com/watch?v=MgAR8_WMgeE)
 
@@ -55,27 +57,30 @@ Try out the demo, which [is hosted live here!](https://ceramic.network/)
 ### 📄 **Smart Contract Architecture**
 
 Contracts were written with 
-
+- **Why SBT?**：Proof of whom one has met can be a credential that enhances the credibility of the Wallet. And because for a credential to actually represent a person's characteristics, the credential must be non-transferable. Otherwise, it would be possible for a hedge fund to collect thousands of credentials and create a huge populace with a single click
+- Detail Implementation：
 
 ### Use of Polygon：Deployed to Polygon to issue SBTs to prove that users have met each other.
 
-- test
-    - test
+- Why Polygon?：**The Web3 social experience must be as fast and cheap as Web2. Also, identity is about privacy. We thought Polygon, where ZK technology and other technologies are used, would be a good match for this as well.**
+- Detail Implementation：
 
 ### Use of IPFS：We used IPFS to store the user's Avatar data and metadata.
 
-- test
-    - test
+- Why IPFS?：
+- Detail Implementation：
 
 ### Use of AWS：Route53 was used to make the domain easy to understand.
 
-- test
-    - test
+- What is AWS, Route53?：
+- Why Route53?：This is because it is the easiest to register.
+- Detail Implementation：
 
-### We used Orbis on Ceramic for both fast and cheap UX and data portability.
+### Use of Orbis.SDK on Ceramic：For both fast and cheap UX and data portability.
 
-- test
-    - test
+- What is Orbis.SDK on Ceramic：Ceramic is a mutable datastore tied to a DID, a wrapper for the Ceramic/Lit protocol that complements Ceramic and allows developers to focus on UI/UX.
+- Why Orbis.SDK on Ceramic?：The indexing experience is optimized to provide a faster experience than using Ceramic alone. And because it has data portability and can interface with multiple chains. It also saves time in implementation.
+- Detail Implementation：
 
 ## 2. Design
 
@@ -86,28 +91,33 @@ Contracts were written with
 
 ### ②Presentation of Case Study
 
-- こういった理由で、ここに課題があると特定し、〜が解決策になるという仮説をたてた。
-    - test.
-    test.
+- As the founder, I have attended over seven Web3 conferences around the world this year. There, I noticed the following problems The baffling dichotomy between Telegram and Twitter when exchanging contact information, and DM notes to remember who you have met. Taking selfies. Also, some of the people I met were not satisfied with the above means and were writing everything down in spreadsheets and note-taking apps. This was taken as proof of the challenge.
 
-### ③User flow and thought process
+![test](https://imagetforhackathon.s3.sa-east-1.amazonaws.com/Screen+Shot+2022-08-17+at+7.56.55+PM.png)
+
+
+- A qualitative survey revealed that more than 90% of the respondents were not satisfied with existing social networking sites such as Telegram and Twitter.
+
+
+### ③Problem-solving
+
+- Our product should provide the best UX to solve the above issues.
+    
+
+### ④User flow and thought process
 
 - Try out the demo about the user flow and thought process at [Notion](https://www.notion.so/PoN-The-Proof-of-Networking-ebeda03aaeaf41088978ca13cb5dbd41) and [Miro](https://miro.com/app/board/uXjVPfrhW_M=/?share_link_id=58842346750) and [Figma](https://www.figma.com/file/YJ8RSB0YWbRDTGxbsXVwdj/map?node-id=0%3A1).
    
 
-### ④Branding and Design
+### ⑤Branding and Design
 
 **Part 2: UX Problem Statement for an audience with little to no web3 awareness**
 - Be faster and cheaper than other Web3 products while maintaining elements of data ownership and decentralization.
     - We are able to optimize the data indexing experience.
     - It's a choice for users whether or not to issue an SBT.
-
-### ⑤Problem-solving
-
-- 課題は〜であり、解決策はなにである。だから、以下の解決策を提案している。
-    - test.
    
-
+- Users have authority over our own disclosure whether or not to make the data publicly available.
+   - In the conventional Dapp, many products are obligated to issue NFTs. However, we suggest that this be made optional. This way, users can choose to publish their data, and even if they choose not to issue NFTs or SBTs, the UX is good because it increases speed.
 
 ## 3. Potential Impact
 
@@ -118,7 +128,9 @@ Contracts were written with
 - test.
 
 ### ③It will be a digital representation of an individual that does not rely on personally identifiable information (PII) such as name, gender, nationality, passport number, etc.
-- test.
+- Proof of whom one has met can be a credential that enhances the credibility of the Wallet. And because for a credential to actually represent a person's characteristics, the credential must be non-transferable. Otherwise, it would be possible for a hedge fund to collect thousands of credentials and create a huge populace with a single click.
+
+- I think one of the things we need to do is to strike a major blow to the dictatorial issues and imbalances in the cryptocurrency world. If we do that, you will be amazed at what will happen. Ideally, we need a system that works both to avoid economic elitism and to select people who are working on a particular topic with competence and passion. A good use of identity and reputation primitives could solve this problem.
 
 ## 4. Quality of the Idea
 
@@ -136,40 +148,46 @@ Contracts were written with
 - More Data potability
     - This design decision would keep interoperability with all products built on top of Ceramic, Orbis.sdk, orbis.club included, while extending the usecase for our digital business card product (it is kind of personal POAPS + decentralized business card), we call it Proof of Networking.
 
-- Minting SBT instead of NFT is to prove that users have actually met compared to personal POAP.
+- Must be able to interface with a multi-chain.
+    - For example, if you don't like or don't want to use a certain theory, I don't think you should be forced to use it in order to be part of the identity web of the future. you are free to use Solana, or if you are David Gerard, you don't have to stick to the blockchain, you can use Open You are free to have your own identity, Google, Facebook, etc. with your ID, PoN can provide a UX that doesn't depend only on a particular chain.
 
+- Minting SBT instead of NFT is to prove that users have actually met compared to personal POAP.
+    - POAP's NFT is currently available for sale.
 
 
 
 # 📓 **Appendix**
 
-
 ## 5. Our Product Roadmap
 
-### ①Adding more composable and sophisticated direct message functionality.
+### ①In conjunction with the POAP API, visualize the list of users who participated in a particular event to support networking.
+
+**How creatvie and unique**
+- Many people are not satisfied with the encounters they have at the event. We can increase the likelihood of more enjoyable encounters if we can easily learn more about the attendees in advance; POAP's on-chain data and public APIs make this possible.
+
+### ②Adding more composable and sophisticated direct message functionality.
 
 **How creatvie and unique**
 - Telegram, Discord, Twitter, Messenger, Linkedin, What's app, Slack, LINE, WeChat, etc... Web2 has too many messaging tools that run on completely different protocols.There are some contexts for which data-portability will have more value than others, for example let's take DMs, the great benefit of composability is that you can bring your direct messages from one app to another and pick the user experience you like the most. For a platform dedicated 100% to video like youtube the data-portability would be useful to allow your followers to watch your content from any video app they want to (they aren't locked into one application)
 
-### ②Launch on Mobile App like iOS and Android.
+### ③Launch on Mobile App like iOS and Android.
 
 **How creatvie and unique**
 - To make Web3Social's products a product market fit for consumers, it is necessary to achieve a better UX, and a mobile experience is essential to this. There are only a few projects in the industry that are able to combine data portability and mobile.
 
-### ③The current trade-offs in terms of attack vectors, potential future integration of ZK proofs to enhance privacy.
+### ④The current trade-offs in terms of attack vectors, potential future integration of ZK proofs to enhance privacy.
 
 **How creatvie and unique**
-- test.
-- 
 
-### ④Adding Timeline feature for users.
+
+### ⑤Adding Timeline feature for users.
 
 **How creatvie and unique**
-- test.
-- 
+
+## 6. What We Learned
 
 
-## 6. Frequently questions.
+## 7. Frequently questions.
 
 <details>
     <summary>Q1. Why this solution should work as a replacement for personal POAPs</summary>
@@ -178,8 +196,12 @@ Contracts were written with
     </div>
 </details>    
 
-## 7. Team Members
+## 8. Team Members：Efforts were made from South America, Europe, the United States, and Japan. All are scheduled for ongoing development.
 
+- Hidetaka Ko | Product Manager | We have been developing and operating Japan’s largest homestay matching service for 4 years as CEO/Co-Founder.
+- Asiya | Full Stack Software Engineer | I’m a SWE based between LA/NY, good with front end, like to build things.
+- O_t | Full Stack Software Engineer | In blockchain space since 2013, full stack+solidity developer and investor, co-organizer Ethereum Meetup Spain.
+- Taiki Ikeda | UI Designer | Fluent in English and Japanese.
 
 
 ## 8. Resourses.
@@ -191,4 +213,4 @@ Contracts were written with
 - [Miro](https://miro.com/app/board/uXjVPfrhW_M=/?share_link_id=58842346750) 
 - Medium:Coming soon
 - WhitePaper:Coming soon
-- 
+-
