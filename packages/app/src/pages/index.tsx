@@ -1,36 +1,21 @@
 import { useEffect, useState } from 'react'
-import Head from 'next/head'
-import Image from 'next/image'
-import Router from 'next/router'
+import { useRouter } from 'next/router'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount, useDisconnect } from 'wagmi'
-import { Box, Heading, Container, Text, Button, Stack } from '@chakra-ui/react'
-
-import styles from '../styles/Home.module.css'
+import { Box, Heading, Container, Text, Stack, VStack } from '@chakra-ui/react'
 
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
+    const router = useRouter()
     const { address } = useAccount()
     const { disconnect } = useDisconnect()
-    const [mounted, setMounted] = useState(false)
     const [userData, setUserData] = useState(null)
 
     useEffect(() => {
-        setMounted(true)
-    }, [])
-
-    useEffect(() => {
-        if (address) {
-            // fetch from API if has user data redirect to QR
-            if (userData) {
-                Router.push('/qr')
-            } else {
-                // if user is not created yet redirect to create user form
-                Router.push('/create')
-            }
-        }
-    }, [address])
+        if (userData) router.push('/qr')
+        if (address) router.push('/new')
+    }, [address, router, userData])
 
     return (
         <>
@@ -40,11 +25,12 @@ const Home: NextPage = () => {
                         PoN
                     </Heading>
                     <Text color={'gray.400'}>Proof of Networking</Text>
-                    <Stack direction={'column'} spacing={3} align={'center'} alignSelf={'center'} position={'relative'}>
+                    <VStack gap={5}>
+                        <Text color={'gray.600'}>Hi anon, log in with your wallet to create or view your profile</Text>
                         <ConnectButton />
 
                         <Box mt={3}></Box>
-                    </Stack>
+                    </VStack>
                 </Stack>
             </Container>
         </>

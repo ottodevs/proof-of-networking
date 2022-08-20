@@ -8,7 +8,7 @@ export const { chains, provider, webSocketProvider } = configureChains(
 )
 
 export const { connectors } = getDefaultWallets({
-    appName: 'Web3 Patreon',
+    appName: 'Proof of Networking',
     chains,
 })
 

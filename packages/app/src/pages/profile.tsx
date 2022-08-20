@@ -1,25 +1,17 @@
-import { useEffect } from 'react'
-import { useAccount } from 'wagmi'
+import { Code, Container, Heading, VStack } from '@chakra-ui/react'
 import { useOrbis } from '~/hooks'
 
 export default function Profile() {
-    const orbis = useOrbis()
-    const { connector, isConnected: isWalletConnected } = useAccount()
+    const { profile } = useOrbis()
 
-    const connectOrbis = async () => {
-        const isOrbisConnected = await orbis.isConnected()
-        console.log({ isOrbisConnected, isWalletConnected })
-        if (!isOrbisConnected && isWalletConnected) {
-            const provider = await connector?.getProvider()
-            const res = await orbis.connect(provider)
-
-            console.log('orbis res', res)
-        }
-    }
-
-    useEffect(() => {
-        connectOrbis()
-    })
-
-    return <div>Profile</div>
+    return (
+        <VStack spacing='10'>
+            <Heading fontWeight={600} fontSize={{ base: '3xl', sm: '4xl', md: '5xl' }} lineHeight={'110%'}>
+                Your profile
+            </Heading>
+            <Container>
+                <Code>{JSON.stringify(profile, null, 2)}</Code>
+            </Container>
+        </VStack>
+    )
 }
