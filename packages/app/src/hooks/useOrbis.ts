@@ -44,9 +44,9 @@ export const useOrbis = () => {
                 if (currentChainDid) {
                     const ponProfile: PonProfile = {
                         did: currentChainDid.did,
-                        name: currentChainDid.details.profile.username,
-                        description: currentChainDid.details.profile.description,
-                        twitter: currentChainDid.details.profile.data?.twitter,
+                        name: currentChainDid.details.profile?.username,
+                        description: currentChainDid.details.profile?.description,
+                        twitter: currentChainDid.details.profile?.data?.twitter,
                     }
                     setProfile(ponProfile)
                 }
@@ -84,5 +84,5 @@ export const useOrbis = () => {
         return false
     }
 
-    return { connect, profile, updateProfile }
+    return { connect, orbis, profile, updateProfile }
 }

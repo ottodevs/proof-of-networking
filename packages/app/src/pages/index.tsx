@@ -5,13 +5,16 @@ import { useAccount } from 'wagmi'
 import { Box, Heading, Container, Text, Stack, VStack } from '@chakra-ui/react'
 
 import type { NextPage } from 'next'
+import { useOrbis } from '~/hooks'
 
 const Home: NextPage = () => {
     const router = useRouter()
-    const [userData] = useState(null)
+    const { profile } = useOrbis()
     useAccount({
         onConnect: () => {
-            if (userData) router.push('/qr')
+            console.log('connected', profile)
+            // TODO: improve this flow
+            if (profile) router.push('/pon/scan')
             router.push('/new')
         },
     })
