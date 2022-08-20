@@ -5,34 +5,55 @@ on:
         branches: ['main']
     pull_request:
         types: [opened, synchronize]
+    workflow_dispatch:
+
+concurrency:
+    group: ${{ github.head_ref || github.run_id }}
+    cancel-in-progress: true
 
 jobs:
-    build:
-        name: Build and Test
+    cache-install-build-test:
+        name: Cache, Install, Lint, Build and Test
+        runs-on: ubuntu-18.04
         timeout-minutes: 15
-        runs-on: ubuntu-latest
         env:
             TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
             TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
 
         steps:
-            - name: Check out code
-              uses: actions/checkout@v2
-              with:
-                  fetch-depth: 2
+            - name: Checkout
+              uses: actions/checkout@v3
 
-            - uses: pnpm/action-setup@v2.0.1
-              with:
-                  version: 6.32.2
-
-            - name: Setup Node.js environment
-              uses: actions/setup-node@v2
+            - name: Install Node
+              uses: actions/setup-node@v3
               with:
                   node-version: 16
-                  cache: 'pnpm'
+
+            - name: Install pnpm
+              uses: pnpm/action-setup@v2
+              id: pnpm-install
+              with:
+                  version: 7
+                  run_install: false
+
+            - name: Get pnpm store directory
+              id: pnpm-cache
+              run: |
+                  echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+            - name: Setup pnpm cache
+              uses: actions/cache@v3
+              with:
+                  path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: |
+                      ${{ runner.os }}-pnpm-store-
 
             - name: Install dependencies
               run: pnpm install
+
+            - name: Trunk check
+              uses: trunk-io/trunk-action@v1
 
             - name: Build
               run: pnpm build

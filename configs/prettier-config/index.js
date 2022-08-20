@@ -15,6 +15,7 @@ module.exports = {
     plugins: ['./node_modules/prettier-plugin-solidity', './node_modules/prettier-plugin-jsdoc'],
     overrides: [
         { files: '*.json', options: { parser: 'json' } },
+        { files: '*.yaml', options: { parser: 'yaml' } },
         { files: '*.sol', options: { parser: 'solidity-parse' } },
     ],
 }
