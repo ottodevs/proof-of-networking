@@ -5,6 +5,8 @@ import * as yup from 'yup'
 import { useOrbis } from '~/hooks'
 import { useRouter } from 'next/router'
 import { PonProfile } from '~/hooks/useOrbis'
+import { useAccount } from 'wagmi'
+import { useEffect } from 'react'
 
 const schema = yup
     .object({
@@ -16,8 +18,15 @@ const schema = yup
 
 export default function New() {
     const router = useRouter()
+    const { address } = useAccount()
     const { connect, updateProfile } = useOrbis()
     const { handleSubmit, register } = useForm({ resolver: yupResolver(schema) })
+
+    useEffect(() => {
+        if (!address) {
+            router.push('/')
+        }
+    })
 
     const onSubmit = async (data: FieldValues) => {
         const connected = await connect()

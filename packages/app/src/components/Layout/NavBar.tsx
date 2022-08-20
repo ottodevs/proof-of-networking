@@ -1,6 +1,7 @@
 import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
 import { ToggleColorMode } from './ToggleColorMode'
 import { NavLink } from './NavLink'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 export const NavBar = () => {
     return (
@@ -9,7 +10,10 @@ export const NavBar = () => {
                 <Box style={{ fontWeight: '800' }}>
                     <NavLink route={'/'}>Proof of Networking</NavLink>
                 </Box>
-                <ToggleColorMode />
+                <HStack>
+                    <ConnectButton />
+                    <ToggleColorMode />
+                </HStack>
             </HStack>
         </Box>
     )

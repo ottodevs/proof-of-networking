@@ -1,21 +1,20 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/router'
 import { ConnectButton } from '@rainbow-me/rainbowkit'
-import { useAccount, useDisconnect } from 'wagmi'
+import { useAccount } from 'wagmi'
 import { Box, Heading, Container, Text, Stack, VStack } from '@chakra-ui/react'
 
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
     const router = useRouter()
-    const { address } = useAccount()
-    const { disconnect } = useDisconnect()
-    const [userData, setUserData] = useState(null)
-
-    useEffect(() => {
-        if (userData) router.push('/qr')
-        if (address) router.push('/new')
-    }, [address, router, userData])
+    const [userData] = useState(null)
+    useAccount({
+        onConnect: () => {
+            if (userData) router.push('/qr')
+            router.push('/new')
+        },
+    })
 
     return (
         <>
