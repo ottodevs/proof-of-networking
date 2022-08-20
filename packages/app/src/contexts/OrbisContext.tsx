@@ -1,7 +1,7 @@
 import { Orbis } from '@orbisclub/orbis-sdk'
 import React, { createContext, ReactNode } from 'react'
 
-const OrbisContext = createContext<typeof Orbis | undefined>(undefined)
+const OrbisContext = createContext<Orbis | undefined>(undefined)
 
 // put orbis outside to avoid being affected by re-renders
 const orbis = new Orbis()

@@ -29,8 +29,10 @@ export const useOrbis = () => {
 
     useEffect(() => {
         const getDids = async () => {
-            const dids = await orbis.getDids(address)
-            setDids(dids.data)
+            if (address) {
+                const dids = await orbis.getDids(address)
+                setDids(dids.data)
+            }
         }
         getDids()
     }, [address, orbis])

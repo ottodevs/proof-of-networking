@@ -1,4 +1,11 @@
 declare module '@orbisclub/orbis-sdk' {
+    export class Orbis {
+        connect(provider: ethers.Provider, lit: boolean): Promise<OrbisResponse>
+        getDids(address: string): Promise<OrbisResponse>
+        isConnected(): Promise<OrbisResponse>
+        updateProfile(profile: Profile): Promise<OrbisResponse>
+    }
+
     export interface Profile {
         pfp: string
         username: string
