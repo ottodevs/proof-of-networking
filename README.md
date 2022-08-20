@@ -2,10 +2,10 @@
 
 ---
 
-![GitHub deployments](https://img.shields.io/github/deployments/Hackerthonweb3/proof-of-networking/production?label=deployment&logo=vercel&style=flat-square&color=77dd77)
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Hackerthonweb3/proof-of-networking/Build%20Pipeline?logo=github&style=flat-square&color=77dd77)
+[![GitHub deployments](https://img.shields.io/github/deployments/Hackerthonweb3/proof-of-networking/production?label=deployment&logo=vercel&style=flat-square&color=00a550&logoColor=00a550)](https://trypon.vercel.app)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Hackerthonweb3/proof-of-networking/Build%20Pipeline?logo=github&style=flat-square&color=00a550&logoColor=00a550)](https://github.com/Hackerthonweb3/proof-of-networking/actions/workflows/pipeline.yml)
 
-Try out the demo, which [is hosted live here!](https://ceramic.network/)
+Try out the demo, which [is hosted live here!](https://trypon.vercel.app)
 
 ## 🚀 **Statement**
 
