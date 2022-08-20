@@ -48,3 +48,7 @@ declare module '@orbisclub/orbis-sdk' {
         username: string
     }
 }
+
+declare module '@orbisclub/orbis-sdk/lib/indexer-db' {
+    export const indexer: any
+}
