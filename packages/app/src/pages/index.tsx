@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         fetchData()
             // make sure to catch any error
             .catch(console.error)
-    }, [])
+    }, [orbis])
 
     const renderLanding = (
         <>

@@ -67,10 +67,11 @@ export const CustomConnect = () => {
                                                     marginRight: 4,
                                                 }}>
                                                 {chain.iconUrl && (
-                                                    <img
+                                                    <Image
                                                         alt={chain.name ?? 'Chain icon'}
                                                         src={chain.iconUrl}
-                                                        style={{ width: 12, height: 12 }}
+                                                        width='12px'
+                                                        height='12px'
                                                     />
                                                 )}
                                             </div>

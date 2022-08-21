@@ -1,7 +1,6 @@
 import { Box, HStack, useColorModeValue } from '@chakra-ui/react'
 import { ToggleColorMode } from './ToggleColorMode'
 import { NavLink } from './NavLink'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
 
 export const NavBar = () => {
     return (

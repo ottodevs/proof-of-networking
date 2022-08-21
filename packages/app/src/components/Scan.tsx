@@ -31,7 +31,7 @@ export default function Scan({ profile }: any) {
         return () => {
             console.log('cleaned up')
         }
-    }, [newDid])
+    }, [newDid, router])
 
     function handleChangeMode(view: string) {
         setActiveView(view)
