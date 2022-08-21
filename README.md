@@ -5,7 +5,7 @@
 [![GitHub deployments](https://img.shields.io/github/deployments/Hackerthonweb3/proof-of-networking/production?label=deployment&logo=vercel&style=flat-square&color=00a550&logoColor=00a550)](https://trypon.vercel.app)
 [![GitHub Workflow Status](https://img.shields.io/github/workflow/status/Hackerthonweb3/proof-of-networking/Build%20Pipeline?logo=github&style=flat-square&color=00a550&logoColor=00a550)](https://github.com/Hackerthonweb3/proof-of-networking/actions/workflows/pipeline.yml)
 
-Try out the demo, which [is hosted live here!](https://trypon.vercel.app)
+Try out the demo, which [is hosted live here!](https://pon.ninja/)
 
 ## 🚀 **Statement**
 
@@ -19,11 +19,11 @@ Try out the demo, which [is hosted live here!](https://trypon.vercel.app)
 
 ## 🎬 **Pitch & Live Demo (Video)**
 
-PoN is a Dapp used by people in the web3 industry attending the conference to exchange contact information with people they meet in a more efficient and enjoyable way.
+PoN is a Dapp used by people in the web3 industry attending the conference to exchange contact information with people they meet in a more efficient and enjoyable way. PON's profile can aggregate on- and off-chain data into a holistic identity that enables reliable networking and meaningful connections among users and organizations.
 
 <p align='center'>
-    <a href='http://www.youtube.com/watch?v=MgAR8_WMgeE'>
-        <img src="http://img.youtube.com/vi/MgAR8_WMgeE/0.jpg">
+    <a href='https://youtu.be/isYEYB7rZ4Q'>
+        <img src="https://imagetforhackathon.s3.sa-east-1.amazonaws.com/Screen+Shot+2022-08-20+at+1.51.49+PM.png">
     </a>
 </p>
 
@@ -32,6 +32,7 @@ PoN is a Dapp used by people in the web3 industry attending the conference to ex
 -   **It’s hard for Web3 People to remember everyone they meet at events and re-connect later.**
 
     -   As current Alternatives, some of them are documenting everything on Memo app or Spreadsheet.
+    -   But due to the lack of effective identity gating, one usually ends up getting not connected at all or waking up every day to an inbox flooded by random DMs and spam.
 
 -   **Web2 Social Media is Broken**
     -   Networks Sell your Data
@@ -43,7 +44,7 @@ PoN is a Dapp used by people in the web3 industry attending the conference to ex
 
 ## 💡 **Solution**
 
--   **Best UX for above usecases**
+-   **By sharing your profile in a specially designed business card format in Web3 industry, you can quickly showcase who you are and why your connections are valuable.**
 
     -   **You can combine all of your contact information into one profile.**
     -   **You can also include other profile information in term of your identity and career.**
@@ -83,9 +84,13 @@ Contracts were written with
 
 #### Use of AWS：Route53 was used to make the domain easy to understand
 
--   What is AWS, Route53?：
+-   What is AWS, Route53?：Amazon Route 53 is a highly available and scalable Domain Name System (DNS) web service.
 -   Why Route53?：This is because it is the easiest to register.
 -   Detail Implementation：
+
+<p align="center">
+    <img src="https://imagetforhackathon.s3.sa-east-1.amazonaws.com/Screen+Shot+2022-08-20+at+2.37.00+PM.png">
+</p>
 
 #### Use of Orbis.SDK on Ceramic：For both fast and cheap UX and data portability
 
@@ -101,17 +106,26 @@ Contracts were written with
 
 #### ② Presentation of Case Study
 
--   As the founder, I have attended over seven Web3 conferences around the world this year. There, I noticed the following problems The baffling dichotomy between Telegram and Twitter when exchanging contact information, and DM notes to remember who you have met. Taking selfies. Also, some of the people I met were not satisfied with the above means and were writing everything down in spreadsheets and note-taking apps. This was taken as proof of the challenge.
+-   As the founder, I have attended over seven Web3 conferences around the world this year. There, I noticed the following problems The baffling dichotomy between Telegram and Twitter when exchanging contact information, and DM notes to remember who you have met. Taking selfies. Also, some of the people I met were not satisfied with the above means and were writing everything down in spreadsheets and note-taking apps. This was taken as proof of the challenge. Moreover, due to the lack of effective identity gating, one usually ends up getting not connected at all or waking up every day to an inbox flooded by random DMs and spam.
 
 <p align="center">
     <img src="https://imagetforhackathon.s3.sa-east-1.amazonaws.com/Screen+Shot+2022-08-17+at+7.56.55+PM.png" width="300">
 </p>
 
+-   In the United States, losses from identity theft and related fraud grew from $1.8 billion in 2019 to $3.3 billion in 2020 and $5.8 billion in 2021 (FTC, 2022). As more and more of our lives shift to digital following the global pandemic, this problem continues to grow at a rapid pace.
+
 -   A qualitative survey revealed that more than 90% of the respondents were not satisfied with existing social networking sites such as Telegram and Twitter.
 
 #### ③ Problem-solving
 
--   Our product should provide the best UX to solve the above issues.
+-   Our product should provide the best UX to solve the above issues by sharing your profile in a specially designed business card format in Web3 industry, you can quickly showcase who you are and why your connections are valuable.
+
+    -   **You can combine all of your contact information into one profile.**
+    -   **You can also include other profile information in term of your identity and career.**
+    -   **Profile data is exchanged and stored with each other using QR codes.**
+    -   **Searchable Profile data.**
+    -   **The issuance of SBTs to prove that they have met will make the connection between users stronger and more memorable and composable.**
+    -   **User can own social graph relationship’s data**
 
 #### ④ User flow and thought process
 
@@ -133,27 +147,29 @@ Contracts were written with
 
 #### ① Accelerating better encounters between people involved in Web3 can accelerate innovation in the ecosystem
 
--   We are building a world where people have a clearer, more transparent, best version of themselves, are more passionate about the status of the things they care about, and can find others who are working on the same issues. This is because by using our products, we can bring better encounters to the people involved in Web3. The moment when an idea evolves into a discontinuity is largely a result of encounters between people.
+-   This is Because PON offers a better way for users in the web3 industry to network in a reliable and meaningful way. With more verifiable dimensions aggregated in the user's profile, you can now truly speak about who you are and present yourself in a complete and credible way, you have an overall identity.
 
-#### ② Reinventing Web2Social puts the power back in the hands of the user
+-   This is because context-rich identities and more meaningful connections are built, and networks are easier to discover. You can expect to be contacted by more people who better understand your strengths, career aspirations, role in the community, and personal preferences. You will also be able to quickly find the people you want to contact, and your requests can be well communicated in support of your profile.
 
--   test.
-
-#### ③ It will be a digital representation of an individual that does not rely on personally identifiable information (PII) such as name, gender, nationality, passport number, etc
+#### ② It will be a digital representation of an individual that does not rely on personally identifiable information (PII) such as name, gender, nationality, passport number, etc
 
 -   Proof of whom one has met can be a credential that enhances the credibility of the Wallet. And because for a credential to actually represent a person's characteristics, the credential must be non-transferable. Otherwise, it would be possible for a hedge fund to collect thousands of credentials and create a huge populace with a single click.
 
 -   I think one of the things we need to do is to strike a major blow to the dictatorial issues and imbalances in the cryptocurrency world. If we do that, you will be amazed at what will happen. Ideally, we need a system that works both to avoid economic elitism and to select people who are working on a particular topic with competence and passion. A good use of identity and reputation primitives could solve this problem.
 
+#### ③ Reinventing Web2Social puts the power back in the hands of the user
+
+-   test.
+
 ### 4. Quality of the Idea
 
 #### How Creative
 
--   We develop this idea based on real customer problems. We describe [here](https://www.notion.so/049750256bb34ba29f6a9feb70c93f75?v=d3a37aee9db345fe9569cb7e79cae048) the differences between us and other projects we have researched.
+-   We develop this idea based on real customer problems.
 
 #### How Unique
 
--   There are no products that specialize in business-card-like use cases, such as actually meeting people face to face and recording the meeting for Web3 people.
+-   There are no products that specialize in business-card-like use cases, such as actually meeting people face to face and recording the meeting for Web3 people. We describe [here](https://www.notion.so/049750256bb34ba29f6a9feb70c93f75?v=d3a37aee9db345fe9569cb7e79cae048) the differences between us and other projects we have researched.
     -   POAP is optimized for conference attendance verification, others are optimized for profile functions only, Gitcoin Passport is optimized for Gitcoin, Telegram and Twitter are optimized for Web2 messaging and social networking experiences.
 -   Very fast and inexpensive social experience compared to simlar did project.
 
@@ -182,7 +198,7 @@ How creative and unique:
 
 #### ② Adding more composable and sophisticated direct message functionality
 
-\_How creative and unique
+How creative and unique
 
 -   Telegram, Discord, Twitter, Messenger, Linkedin, What's app, Slack, LINE, WeChat, etc... Web2 has too many messaging tools that run on completely different protocols.There are some contexts for which data-portability will have more value than others, for example let's take DMs, the great benefit of composability is that you can bring your direct messages from one app to another and pick the user experience you like the most. For a platform dedicated 100% to video like youtube the data-portability would be useful to allow your followers to watch your content from any video app they want to (they aren't locked into one application)
 
@@ -199,6 +215,12 @@ How creative and unique:
 #### ⑤ Adding Timeline feature for users
 
 How creative and unique:
+
+#### ⑥ Implement UI/UX for the organization or project on PON
+
+How creative and unique:
+
+-   Our organizational profiles in PON will be verified and trusted. To protect users from scams & fake links prevalent on Twitter and Discord, PON verifies organizations by their existing official accounts such as Twitter. Organizations can also connect with other reputable entities and showcase it in the backers/partners/team sections. Issuing verifiable credentials or SBTs will also later be enabled for organizations to recognize key community contributors. A fabric of trust composed of such connections and records holds PON profiles trustworthy. So users will be sure that the links they’re clicking on and all updates received are official.
 
 ### 6. What We Learned
 
