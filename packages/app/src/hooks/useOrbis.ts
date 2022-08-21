@@ -24,7 +24,7 @@ export const useOrbis = () => {
 
     const [profile, setProfile] = useState<PonProfile>()
     const [dids, setDids] = useState<OrbisDid[]>()
-    const { address, connector, isConnected: isWalletConnected } = useAccount()
+    const { address, connector } = useAccount()
     const { chain } = useNetwork()
 
     useEffect(() => {
@@ -58,12 +58,11 @@ export const useOrbis = () => {
     const connect = async () => {
         const orbisConnection = await orbis.isConnected()
         const isOrbisConnected = orbisConnection.status === 200
-        if (isWalletConnected && !isOrbisConnected) {
+        if (!isOrbisConnected) {
             const provider = await connector?.getProvider()
-            // passing false as second argument to disable Lit Protocol
-            // https://github.com/OrbisWeb3/orbis-sdk/blob/master/index.js#L86
-            await orbis.connect(provider, false)
+            await orbis.connect(provider)
         }
+        console.log('is orbis connected after connect try?', isOrbisConnected)
 
         return isOrbisConnected
     }
