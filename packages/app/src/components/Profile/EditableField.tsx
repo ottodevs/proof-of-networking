@@ -1,13 +1,28 @@
 import { Box, Editable, EditableInput, EditablePreview, HStack, Input } from '@chakra-ui/react'
 import { EditableControls } from './EditableControls'
 
-export const EditableField = ({ value }: { value: string | undefined }) => {
+export const EditableField = ({
+    value,
+    width,
+    isEdit,
+}: {
+    value: string | undefined
+    width?: string
+    isEdit: boolean
+}) => {
     return (
-        <Editable textAlign='left' value={value} fontSize='xl' isPreviewFocusable={false} minW={'100%'}>
+        <Editable
+            width={width || '100%'}
+            textAlign='left'
+            value={value}
+            fontSize='md'
+            fontWeight={400}
+            isPreviewFocusable={false}
+            minW={'100%'}>
             <HStack justifyContent={'space-between'} spacing={'.5'}>
                 <EditablePreview h={'42px'} />
                 <Input as={EditableInput} h={'42px'} />
-                <EditableControls />
+                {isEdit && <EditableControls />}
             </HStack>
         </Editable>
     )

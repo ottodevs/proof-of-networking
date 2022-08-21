@@ -17,4 +17,5 @@ export const wagmiClient = createClient({
     connectors,
     provider,
     webSocketProvider,
+    persister: null,
 })

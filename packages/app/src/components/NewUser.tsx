@@ -16,7 +16,7 @@ const schema = yup
     })
     .required()
 
-export default function New() {
+export default function NewUser() {
     const router = useRouter()
     const { address } = useAccount()
     const { connect, profile, updateProfile } = useOrbis()
@@ -34,6 +34,7 @@ export default function New() {
 
     const onSubmit = async (data: FieldValues) => {
         const connected = await connect()
+
         if (connected) {
             const profileUpdated = await updateProfile(data as PonProfile)
             if (profileUpdated) router.push('/profile')

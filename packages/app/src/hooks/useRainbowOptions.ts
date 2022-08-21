@@ -12,9 +12,8 @@ export const useRainbowOptions = () => {
         appName: 'Web3 Patreon',
         chains,
         // coolMode: true, // TODO: too much coolness for now?
-        theme,
         //initialChain: // TODO: get from a hook, changing to current selected chain if valid
     }
 
-    return rainbowOptions
+    return chains
 }
