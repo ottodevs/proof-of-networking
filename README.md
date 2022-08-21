@@ -23,7 +23,7 @@ PoN is a Dapp used by people in the web3 industry attending the conference to ex
 
 <p align='center'>
     <a href='https://youtu.be/isYEYB7rZ4Q'>
-        https://user-images.githubusercontent.com/20131841/185783244-210d05d1-f884-4f0d-9639-3f1768de2286.png
+        <img src="https://user-images.githubusercontent.com/20131841/185783244-210d05d1-f884-4f0d-9639-3f1768de2286.png" />
     </a>
 </p>
 
