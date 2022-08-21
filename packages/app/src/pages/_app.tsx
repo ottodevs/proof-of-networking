@@ -1,24 +1,46 @@
-// import '../scripts/wdyr'
-import '@fontsource/silkscreen/400.css'
-
-import { ChakraProvider } from '@chakra-ui/react'
-import type { AppProps } from 'next/app'
+import { chain, createClient, configureChains, defaultChains, WagmiConfig } from 'wagmi'
+import { publicProvider } from 'wagmi/providers/public'
+import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit'
+import '@rainbow-me/rainbowkit/styles.css'
+import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { Layout } from '~/components/Layout'
-import { WagmiConfig } from 'wagmi'
+import { useIsMounted } from '~/hooks/useIsMounted'
+import { ChakraProvider } from '@chakra-ui/react'
+import { theme } from '~/lib'
 import { OrbisProvider } from '~/contexts'
-import { theme, wagmiClient } from '~/lib'
+import type { AppProps } from 'next/app'
+const { provider, webSocketProvider, chains } = configureChains([chain.polygon], [publicProvider()])
 
-const PonApp = ({ Component, pageProps }: AppProps) => {
+const { connectors } = getDefaultWallets({
+    appName: 'Proof of Networking',
+    chains,
+})
+
+const client = createClient({
+    provider,
+    webSocketProvider,
+    autoConnect: true,
+    // added connectors from rainbowkit
+    connectors,
+})
+
+function PonApp({ Component, pageProps }: AppProps) {
+    const monted = useIsMounted()
+
     return (
-        <OrbisProvider>
-            <ChakraProvider theme={theme}>
-                <WagmiConfig client={wagmiClient}>
-                    <Layout>
-                        <Component {...pageProps} />
-                    </Layout>
-                </WagmiConfig>
-            </ChakraProvider>
-        </OrbisProvider>
+        monted && (
+            <WagmiConfig client={client}>
+                <RainbowKitProvider chains={chains}>
+                    <ChakraProvider theme={theme}>
+                        <OrbisProvider>
+                            <Layout>
+                                <Component {...pageProps} />
+                            </Layout>
+                        </OrbisProvider>
+                    </ChakraProvider>
+                </RainbowKitProvider>
+            </WagmiConfig>
+        )
     )
 }
 

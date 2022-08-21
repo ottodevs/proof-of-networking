@@ -11,7 +11,6 @@ export const NavBar = () => {
                     <NavLink route={'/'}>Proof of Networking</NavLink>
                 </Box>
                 <HStack>
-                    <ConnectButton />
                     <ToggleColorMode />
                 </HStack>
             </HStack>

@@ -18,14 +18,14 @@ const schema = yup
 
 export default function New() {
     const router = useRouter()
-    const { address } = useAccount()
+    // const { address } = useAccount()
     const { connect, profile, updateProfile } = useOrbis()
     const { handleSubmit, register } = useForm({ resolver: yupResolver(schema) })
 
     useEffect(() => {
-        if (!address) {
-            router.push('/')
-        }
+        // if (!address) {
+        //     router.push('/')
+        // }
         if (profile && profile.name) {
             console.log('profile found', profile.name)
             router.push('/profile')
