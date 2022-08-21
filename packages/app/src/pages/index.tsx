@@ -12,9 +12,16 @@ import LogoSvg from '../media/logo.svg'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
+    const { connect } = useOrbis()
     const { address: connectedAddress } = useAccount({
-        onConnect: ({ address: newAddress }) => {
-            restoreCeramicSession(newAddress)
+        onConnect: async ({ address: newAddress }) => {
+            const sessionRestored = tryRestoreSession(newAddress)
+            console.log('sessionRestored', sessionRestored)
+            if (!sessionRestored) {
+                console.log('orbisConnected on wallet connect?')
+                const orbisConneaced = await connect()
+                console.log('orbisConnected on wallet connect?', orbisConneaced)
+            }
         },
         onDisconnect: () => saveCeramicSession(),
     })
@@ -40,18 +47,29 @@ const Home: NextPage = () => {
             localStorage.removeItem('ceramic-session')
         }
     }
-
-    const restoreCeramicSession = async (address?: string) => {
-        console.log('hello address', address)
+    const tryRestoreSession = (address?: string) => {
         const lowerCaseAddress = address?.toLowerCase()
         // Manage ceramic session restore
         const ceramicPreviousSession = localStorage.getItem(`ceramic-session-${lowerCaseAddress}`)
-        if (ceramicPreviousSession) {
-            console.log('ceramic session found! restoring for address', lowerCaseAddress)
-            localStorage.setItem('ceramic-session', ceramicPreviousSession)
-            console.log('ceramic session restored!')
+        if (!ceramicPreviousSession) {
+            return false
         }
+        console.log('ceramic session found! restoring for address', lowerCaseAddress)
+        localStorage.setItem('ceramic-session', ceramicPreviousSession)
+        console.log('ceramic session restored!')
+        return true
     }
+    // const restoreCeramicSession = async (address?: string) => {
+    //     console.log('hello address', address)
+    //     const lowerCaseAddress = address?.toLowerCase()
+    //     // Manage ceramic session restore
+    //     const ceramicPreviousSession = localStorage.getItem(`ceramic-session-${lowerCaseAddress}`)
+    //     if (ceramicPreviousSession) {
+    //         console.log('ceramic session found! restoring for address', lowerCaseAddress)
+    //         localStorage.setItem('ceramic-session', ceramicPreviousSession)
+    //         console.log('ceramic session restored!')
+    //     }
+    // }
 
     useEffect(() => {
         const fetchData = async () => {
