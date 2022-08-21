@@ -1,9 +1,22 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import Image from 'next/image'
-import { Heading, Text, VStack, FormControl, FormLabel, Input, InputGroup, Button, Flex } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import QRCode from 'react-qr-code'
+import {
+    useDisclosure,
+    Heading,
+    Text,
+    VStack,
+    FormControl,
+    FormLabel,
+    Input,
+    InputGroup,
+    Button,
+    Flex,
+} from '@chakra-ui/react'
+import AccountModal from '../components/AccountModal'
+
 import AvatarSvg from '../media/avatar.svg'
 import ScanSvg from '../media/scan.svg'
 import QrSvg from '../media/qr.svg'
@@ -17,7 +30,8 @@ export default function Scan({ profile }: any) {
     const router = useRouter()
     const { register } = useForm()
     const [activeView, setActiveView] = useState('qr')
-    const [newDid, setDid] = useState('did:pkh:eip155:137:0xe73d88e147e12ca4cdde9062db67f06ffd43c5e8')
+    const [newDid, setDid] = useState('')
+    const { isOpen, onOpen, onClose } = useDisclosure()
 
     function isQr() {
         return activeView === 'qr'
@@ -26,6 +40,7 @@ export default function Scan({ profile }: any) {
     useEffect(() => {
         // 'did:pkh:eip155:137:0xe73d88e147e12ca4cdde9062db67f06ffd43c5e8'
         if (newDid) {
+            //onOpen() // TODO: move po logic to modal
             router.push({ pathname: '/pon/[did]', query: { did: newDid } }, '/pon')
         }
         return () => {
@@ -121,6 +136,7 @@ export default function Scan({ profile }: any) {
                     </span>
                 </Button>
             </Flex>
+            <AccountModal isOpen={isOpen} onClose={onClose} />
         </VStack>
     )
 }
