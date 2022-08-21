@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Head from 'next/head'
 import { useState, useEffect } from 'react'
 import { useAccount } from 'wagmi'
 import { Box, Heading, Container, Text, Stack, VStack } from '@chakra-ui/react'
@@ -48,16 +47,6 @@ const Home: NextPage = () => {
 
     return (
         <>
-            <Head>
-                <title>PoN</title>
-                <meta name='description' content='PoN' />
-                <link rel='preconnect' href='https://fonts.googleapis.com' />
-                <link rel='preconnect' href='https://fonts.gstatic.com' />
-                <link
-                    href='https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap'
-                    rel='stylesheet'
-                />
-            </Head>
             <Container maxW={'3xl'}>
                 <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 5 }}>
                     {!isConnected && renderLanding}
