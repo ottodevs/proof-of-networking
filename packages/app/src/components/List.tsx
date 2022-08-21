@@ -1,12 +1,12 @@
-import {
-  Stack,
-} from '@chakra-ui/react';
-import ListItem from './ListItem';
+import { Stack } from '@chakra-ui/react'
+import ListItem from './ListItem'
 
-export default function List({ data }:any) {
+export default function List({ data }: any) {
     return (
-      <Stack>
-        {data.map((item:any) => <ListItem key={item.title} {...item} />)}
-      </Stack>
-    );
+        <Stack>
+            {data.map((item: any) => (
+                <ListItem key={item.title} {...item} />
+            ))}
+        </Stack>
+    )
 }

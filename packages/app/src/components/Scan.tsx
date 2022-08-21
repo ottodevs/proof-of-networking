@@ -17,7 +17,7 @@ export default function Scan({ profile }: any) {
     const router = useRouter()
     const { register } = useForm()
     const [activeView, setActiveView] = useState('qr')
-    const [newDid, setDid] = useState('')
+    const [newDid, setDid] = useState('did:pkh:eip155:137:0xe73d88e147e12ca4cdde9062db67f06ffd43c5e8')
 
     function isQr() {
         return activeView === 'qr'
