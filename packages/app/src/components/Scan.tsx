@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
-import Image from 'next/Image'
+import Image from 'next/image'
 import { Heading, Text, VStack, FormControl, FormLabel, Input, InputGroup, Button, Flex } from '@chakra-ui/react'
 import { useRouter } from 'next/router'
 import QRCode from 'react-qr-code'
@@ -44,7 +44,7 @@ export default function Scan({ profile }: any) {
 
     function renderQrCode() {
         return (
-            <Heading lineHeight={'110%'}>
+            <Heading>
                 <Image width='160px' height='160px' src={AvatarSvg} alt='avatar' />
                 <Text mt={2}>{name || 'Anon'}</Text>
                 <div

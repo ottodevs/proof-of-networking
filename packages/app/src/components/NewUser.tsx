@@ -16,16 +16,16 @@ const schema = yup
     })
     .required()
 
-export default function New() {
+export default function NewUser() {
     const router = useRouter()
-    // const { address } = useAccount()
+    const { address } = useAccount()
     const { connect, profile, updateProfile } = useOrbis()
     const { handleSubmit, register } = useForm({ resolver: yupResolver(schema) })
 
     useEffect(() => {
-        // if (!address) {
-        //     router.push('/')
-        // }
+        if (!address) {
+            router.push('/')
+        }
         if (profile && profile.name) {
             console.log('profile found', profile.name)
             router.push('/profile')
@@ -34,6 +34,7 @@ export default function New() {
 
     const onSubmit = async (data: FieldValues) => {
         const connected = await connect()
+
         if (connected) {
             const profileUpdated = await updateProfile(data as PonProfile)
             if (profileUpdated) router.push('/profile')

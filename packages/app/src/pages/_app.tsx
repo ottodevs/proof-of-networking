@@ -1,14 +1,14 @@
-import { chain, createClient, configureChains, defaultChains, WagmiConfig } from 'wagmi'
+import '@rainbow-me/rainbowkit/styles.css'
+import { chain, createClient, configureChains, WagmiConfig } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'
 import { getDefaultWallets, RainbowKitProvider } from '@rainbow-me/rainbowkit'
-import '@rainbow-me/rainbowkit/styles.css'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
+import { ChakraProvider } from '@chakra-ui/react'
 import { Layout } from '~/components/Layout'
 import { useIsMounted } from '~/hooks/useIsMounted'
-import { ChakraProvider } from '@chakra-ui/react'
 import { theme } from '~/lib'
 import { OrbisProvider } from '~/contexts'
 import type { AppProps } from 'next/app'
+
 const { provider, webSocketProvider, chains } = configureChains([chain.polygon], [publicProvider()])
 
 const { connectors } = getDefaultWallets({

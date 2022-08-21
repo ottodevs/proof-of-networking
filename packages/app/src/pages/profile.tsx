@@ -1,10 +1,15 @@
-import { Heading, VStack } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import { Heading, VStack, Button } from '@chakra-ui/react'
 import { EditableField } from '~/components/Profile/EditableField'
 import { useOrbis } from '~/hooks'
 
 export default function Profile() {
     const { profile } = useOrbis()
-    console.log({ profile })
+    const router = useRouter()
+
+    function handleRedirect() {
+        router.push({ pathname: '/' })
+    }
 
     return (
         <VStack spacing='10'>
@@ -16,6 +21,9 @@ export default function Profile() {
                 <EditableField value={profile?.description} />
                 <EditableField value={profile?.twitter} />
             </VStack>
+            <Button onClick={handleRedirect} h={42} p='10px' backgroundColor={'#ffffff3d'}>
+                Go to Scanner
+            </Button>
         </VStack>
     )
 }
