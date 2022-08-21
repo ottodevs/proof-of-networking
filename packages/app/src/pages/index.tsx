@@ -1,31 +1,18 @@
 import Image from 'next/image'
 import Head from 'next/head'
 import { useState, useEffect } from 'react'
-import { ConnectButton } from '@rainbow-me/rainbowkit'
 import { useAccount } from 'wagmi'
 import { Box, Heading, Container, Text, Stack, VStack } from '@chakra-ui/react'
 import { useOrbis } from '~/hooks'
 import Scan from '~/components/Scan'
 import NewUser from '~/components/NewUser'
+import { CustomConnect } from '~/components/CustomConnect'
+import CeramicSessionComponent from '~/components/CeramicSessionComponent'
 import LogoSvg from '../media/logo.svg'
 
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
-    const { connect } = useOrbis()
-    const { address: connectedAddress } = useAccount({
-        onConnect: async ({ address: newAddress }) => {
-            const sessionRestored = tryRestoreSession(newAddress)
-            console.log('sessionRestored', sessionRestored)
-            if (!sessionRestored) {
-                console.log('orbisConnected on wallet connect?')
-                const orbisConneaced = await connect()
-                console.log('orbisConnected on wallet connect?', orbisConneaced)
-            }
-        },
-        onDisconnect: () => saveCeramicSession(),
-    })
-
     const [isOrbis, setIsOrbis] = useState(false)
     const { profile, orbis } = useOrbis()
     const { isConnected } = useAccount()
@@ -33,43 +20,6 @@ const Home: NextPage = () => {
     if (!orbis) {
         throw new Error('useOrbis must be used within a OrbisProvider')
     }
-
-    // // TODO: move session management to hooks
-    // // TODO: connect orbis when session is restored and load profile
-    const saveCeramicSession = () => {
-        // don't remove this item, rename to the account and reuse the same as lit-auth-signature
-        const ceramicSession = localStorage.getItem('ceramic-session')
-        if (ceramicSession) {
-            const lowerCaseAddress = connectedAddress?.toLowerCase()
-            console.log('saving ceramic session for address', lowerCaseAddress)
-            localStorage.setItem(`ceramic-session-${lowerCaseAddress}`, ceramicSession)
-            console.log('session saved, clearing credentials')
-            localStorage.removeItem('ceramic-session')
-        }
-    }
-    const tryRestoreSession = (address?: string) => {
-        const lowerCaseAddress = address?.toLowerCase()
-        // Manage ceramic session restore
-        const ceramicPreviousSession = localStorage.getItem(`ceramic-session-${lowerCaseAddress}`)
-        if (!ceramicPreviousSession) {
-            return false
-        }
-        console.log('ceramic session found! restoring for address', lowerCaseAddress)
-        localStorage.setItem('ceramic-session', ceramicPreviousSession)
-        console.log('ceramic session restored!')
-        return true
-    }
-    // const restoreCeramicSession = async (address?: string) => {
-    //     console.log('hello address', address)
-    //     const lowerCaseAddress = address?.toLowerCase()
-    //     // Manage ceramic session restore
-    //     const ceramicPreviousSession = localStorage.getItem(`ceramic-session-${lowerCaseAddress}`)
-    //     if (ceramicPreviousSession) {
-    //         console.log('ceramic session found! restoring for address', lowerCaseAddress)
-    //         localStorage.setItem('ceramic-session', ceramicPreviousSession)
-    //         console.log('ceramic session restored!')
-    //     }
-    // }
 
     useEffect(() => {
         const fetchData = async () => {
@@ -90,7 +40,7 @@ const Home: NextPage = () => {
             <Text color={'gray.400'}>Proof of Networking</Text>
             <VStack gap={5}>
                 <Text color={'gray.600'}>Hi anon, log in with your wallet to create or view your profile</Text>
-                <ConnectButton />
+                <CustomConnect />
                 <Box mt={3}></Box>
             </VStack>
         </>
@@ -113,6 +63,7 @@ const Home: NextPage = () => {
                     {!isConnected && renderLanding}
                     {isConnected && profile && <Scan profile={profile} />}
                     {isOrbis && isConnected && !profile && <NewUser />}
+                    {isConnected && <CeramicSessionComponent />}
                 </Stack>
             </Container>
         </>
