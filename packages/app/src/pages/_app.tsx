@@ -1,3 +1,5 @@
+import '@fontsource/vt323/400.css'
+
 import '@rainbow-me/rainbowkit/styles.css'
 import { chain, createClient, configureChains, WagmiConfig } from 'wagmi'
 import { publicProvider } from 'wagmi/providers/public'

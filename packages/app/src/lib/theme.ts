@@ -6,8 +6,8 @@ export const theme = extendTheme({
         useSystemColorMode: true,
     },
     fonts: {
-        heading: `Silkscreen, sans-serif`,
-        body: `Silkscreen, sans-serif`,
-        h4: `Silkscreen, sans-serif`,
+        heading: `vt323, monospace`,
+        body: `vt323, monospace`,
+        h4: `vt323, monospace`,
     },
 })
