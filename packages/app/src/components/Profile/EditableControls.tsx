@@ -3,7 +3,7 @@ import { ButtonGroup, IconButton, useEditableControls } from '@chakra-ui/react'
 
 export const EditableControls = () => {
     const { isEditing, getSubmitButtonProps, getCancelButtonProps, getEditButtonProps } = useEditableControls()
-
+    console.log(getSubmitButtonProps())
     const renderEditing = () => (
         <>
             <IconButton variant={'ghost'} aria-label='accept edit' icon={<CheckIcon />} {...getSubmitButtonProps()} />

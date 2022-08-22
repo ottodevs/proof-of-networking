@@ -78,7 +78,8 @@ export default function UserProfile({ isMyProfile, profile }: any) {
             </Flex>
         </>
     )
-
+    const value = form.watch('name')
+    console.log('form value', value)
     return (
         <>
             <Container maxW={'3xl'}>
@@ -96,7 +97,13 @@ export default function UserProfile({ isMyProfile, profile }: any) {
                                 ) : (
                                     <Image src={ProfileIcon} width='80px' height='80px' alt='avatar' />
                                 )}
-                                <EditableField isEdit={isEdit} width='30%' value={profile?.name || 'asiya'} />
+                                <Controller
+                                    name={profile?.name}
+                                    defaultValue={profile?.name}
+                                    control={form.control}
+                                    render={controlProps => (
+                                        <EditableField isEdit={isEdit} width='30%' value={profile?.name || 'asiya'} />
+                                    )}></Controller>
                                 <EditableField isEdit={isEdit} value={profile?.description || 'build things'} />
                                 <EditableField isEdit={isEdit} value={profile?.twitter || 'asiya_asha'} />
                             </form>
