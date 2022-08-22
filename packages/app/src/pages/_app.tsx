@@ -22,6 +22,7 @@ const client = createClient({
     autoConnect: true,
     // added connectors from rainbowkit
     connectors,
+    persister: null,
 })
 
 function PonApp({ Component, pageProps }: AppProps) {

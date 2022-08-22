@@ -14,7 +14,7 @@ export const EditableField = ({
         <Editable
             width={width || '100%'}
             textAlign='left'
-            value={value}
+            defaultValue={value}
             fontSize='md'
             fontWeight={400}
             isPreviewFocusable={false}
