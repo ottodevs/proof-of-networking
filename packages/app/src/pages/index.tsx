@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useAccount } from 'wagmi'
-import { Box, Heading, Container, Text, Stack, VStack } from '@chakra-ui/react'
+import { Box, Heading, Container, Text, Stack, VStack, Spinner } from '@chakra-ui/react'
 import { useOrbis } from '~/hooks'
 import Scan from '~/components/Scan'
 import NewUser from '~/components/NewUser'
@@ -16,6 +16,8 @@ const Home: NextPage = () => {
     const { profile, orbis } = useOrbis()
     const { isConnected } = useAccount()
 
+    console.log({ isConnected })
+
     if (!orbis) {
         throw new Error('useOrbis must be used within a OrbisProvider')
     }
@@ -23,6 +25,9 @@ const Home: NextPage = () => {
     useEffect(() => {
         const fetchData = async () => {
             const orbisConnection = await orbis.isConnected()
+            console.log('orbisConnection')
+            console.log(orbisConnection)
+
             setIsOrbis(orbisConnection)
         }
 
@@ -39,7 +44,7 @@ const Home: NextPage = () => {
             <Text color={'gray.400'}>Proof of Networking</Text>
             <VStack gap={5}>
                 <Text color={'gray.600'}>Hi anon, log in with your wallet to create or view your profile</Text>
-                <CustomConnect />
+                {<CustomConnect />}
                 <Box mt={3}></Box>
             </VStack>
         </>
@@ -50,8 +55,8 @@ const Home: NextPage = () => {
             <Container maxW={'3xl'}>
                 <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 5 }}>
                     {!isConnected && renderLanding}
-                    {isConnected && profile && <Scan profile={profile} />}
-                    {isOrbis && isConnected && !profile && <NewUser />}
+                    {isConnected && profile?.name && <Scan profile={profile} />}
+                    {isConnected && !profile?.name && <NewUser />}
                     {isConnected && <CeramicSessionComponent />}
                 </Stack>
             </Container>
