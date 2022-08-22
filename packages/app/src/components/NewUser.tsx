@@ -45,6 +45,8 @@ export default function NewUser() {
 
             const newData = { ...data }
             newData.pfp = created.path
+            console.log('created.path')
+            console.log(created.path)
 
             const connected = await connect()
 

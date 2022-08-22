@@ -23,6 +23,7 @@ export default function ImageMask({ imageCid }: any) {
                         visibility: 'visible',
                         backgroundRepeat: 'no-repeat',
                         backgroundPosition: '50%',
+                        backgroundSize: 'contain',
                         transform: 'rotate(-60deg)',
                         backgroundImage: `url(https://pon.infura-ipfs.io/ipfs/${imageCid})`,
                     }}
