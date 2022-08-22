@@ -92,7 +92,7 @@ export default function UserProfile({ isMyProfile, profile }: any) {
                                 {profile?.pfp ? (
                                     <ImageMask imageCid={profile?.pfp} />
                                 ) : (
-                                    <Image src={ProfileIcon} width='80px' height='80px' />
+                                    <Image src={ProfileIcon} width='80px' height='80px' alt='avatar' />
                                 )}
                                 <EditableField isEdit={isEdit} width='30%' value={profile?.name || 'asiya'} />
                                 <EditableField isEdit={isEdit} value={profile?.description || 'build things'} />

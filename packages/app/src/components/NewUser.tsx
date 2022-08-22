@@ -3,8 +3,6 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { useAccount } from 'wagmi'
 import { Heading, Text, VStack, FormControl, FormLabel, Input, InputGroup, Textarea, Button } from '@chakra-ui/react'
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
 import { useOrbis } from '~/hooks'
 import { PonProfile } from '~/hooks/useOrbis'
 import { FileUploader } from './FileUploader'
@@ -41,7 +39,7 @@ export default function NewUser() {
         }
     })
 
-    const onSubmit = async data => {
+    const onSubmit = async (data: any) => {
         try {
             const created = await client.add(data.pfp)
 
@@ -55,7 +53,7 @@ export default function NewUser() {
                 if (profileUpdated) router.push('/profile')
             }
         } catch (error) {
-            console.log(error.message)
+            console.log(error)
         }
     }
 
