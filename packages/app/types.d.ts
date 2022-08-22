@@ -30,7 +30,7 @@ declare module '@orbisclub/orbis-sdk' {
     }
 
     export interface Profile {
-        pfp: string
+        pfp?: string
         username: string
         description: string
         cover: string

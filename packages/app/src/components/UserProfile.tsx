@@ -1,5 +1,5 @@
 /** Component for a user profile */
-import { useState, useContext } from 'react'
+import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -9,6 +9,7 @@ import { EditableField } from '~/components/Profile/EditableField'
 import ProfileIcon from '../media/avatar.svg'
 import ProfileOneIcon from '../media/p1.png'
 import ProfileTwoIcon from '../media/p2.png'
+import ImageMask from './ImageMask'
 
 // change to contact data
 const mockCProfile = [{ title: 'hidetaka.eth', icon: ProfileIcon, text: '@deepdiver_web3' }]
@@ -88,7 +89,11 @@ export default function UserProfile({ isMyProfile, profile }: any) {
                     <Box p={1}>
                         {isMyProfile ? (
                             <>
-                                <Image src={ProfileIcon} width='80px' height='80px' alt='profile' />
+                                {profile?.pfp ? (
+                                    <ImageMask imageCid={profile?.pfp} />
+                                ) : (
+                                    <Image src={ProfileIcon} width='80px' height='80px' />
+                                )}
                                 <EditableField isEdit={isEdit} width='30%' value={profile?.name || 'asiya'} />
                                 <EditableField isEdit={isEdit} value={profile?.description || 'build things'} />
                                 <EditableField isEdit={isEdit} value={profile?.twitter || 'asiya_asha'} />

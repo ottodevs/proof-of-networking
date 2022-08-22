@@ -10,7 +10,7 @@ export default function Profile() {
     const router = useRouter()
     console.log(profile)
     function handleRedirect() {
-        router.push({ pathname: '/' })
+        router.push({ pathname: '/scan' })
     }
 
     // TODO: remove test values

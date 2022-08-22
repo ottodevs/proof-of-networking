@@ -1,26 +1,35 @@
-import { FieldValues, useForm } from 'react-hook-form'
+import { useEffect, useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/router'
+import { useAccount } from 'wagmi'
 import { Heading, Text, VStack, FormControl, FormLabel, Input, InputGroup, Textarea, Button } from '@chakra-ui/react'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { useOrbis } from '~/hooks'
-import { useRouter } from 'next/router'
 import { PonProfile } from '~/hooks/useOrbis'
-import { useAccount } from 'wagmi'
-import { useEffect } from 'react'
+import { FileUploader } from './FileUploader'
+import { create } from 'ipfs-http-client'
 
-const schema = yup
-    .object({
-        name: yup.string().required(),
-        description: yup.string().required(),
-        twitter: yup.string().required(),
-    })
-    .required()
+// set ipfs
+const projectId = process.env.NEXT_PUBLIC_INFURA_ID
+const projectSecret = process.env.NEXT_PUBLIC_INFURA_SECRET
+const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64')
+
+const client = create({
+    host: 'ipfs.infura.io',
+    port: 5001,
+    protocol: 'https',
+    apiPath: '/api/v0',
+    headers: {
+        authorization: auth,
+    },
+})
 
 export default function NewUser() {
     const router = useRouter()
     const { address } = useAccount()
     const { connect, profile, updateProfile } = useOrbis()
-    const { handleSubmit, register } = useForm({ resolver: yupResolver(schema) })
+    const { handleSubmit, register, control } = useForm()
 
     useEffect(() => {
         if (!address) {
@@ -32,12 +41,21 @@ export default function NewUser() {
         }
     })
 
-    const onSubmit = async (data: FieldValues) => {
-        const connected = await connect()
+    const onSubmit = async data => {
+        try {
+            const created = await client.add(data.pfp)
 
-        if (connected) {
-            const profileUpdated = await updateProfile(data as PonProfile)
-            if (profileUpdated) router.push('/profile')
+            const newData = { ...data }
+            newData.pfp = created.path
+
+            const connected = await connect()
+
+            if (connected) {
+                const profileUpdated = await updateProfile(newData)
+                if (profileUpdated) router.push('/profile')
+            }
+        } catch (error) {
+            console.log(error.message)
         }
     }
 
@@ -49,7 +67,7 @@ export default function NewUser() {
             <Text fontSize='l' mt={{ sm: 3, md: 3, lg: 5 }} color='gray.500'>
                 Set up your data
             </Text>
-            <FormControl id='name'>
+            <FormControl id='name' isRequired>
                 <FormLabel>Nickname</FormLabel>
                 <InputGroup borderColor='#E0E1E7'>
                     <Input
@@ -61,8 +79,10 @@ export default function NewUser() {
                     />
                 </InputGroup>
             </FormControl>
-
-            <FormControl id='description'>
+            <FileUploader name='pfp' acceptedFileTypes='image/*' placeholder='Your avatar' control={control}>
+                PFP
+            </FileUploader>
+            <FormControl id='description' isRequired>
                 <FormLabel>Description</FormLabel>
                 <Textarea
                     variant='filled'
@@ -79,13 +99,7 @@ export default function NewUser() {
             <FormControl id='twitter'>
                 <FormLabel>Twitter account</FormLabel>
                 <InputGroup borderColor='#E0E1E7'>
-                    <Input
-                        variant='filled'
-                        type='text'
-                        {...register('twitter', {
-                            required: 'This is required',
-                        })}
-                    />
+                    <Input variant='filled' type='text' {...register('twitter', {})} />
                 </InputGroup>
             </FormControl>
             <FormControl id='button'>
