@@ -96,9 +96,13 @@ export default function UserProfile({ isMyProfile, profile }: any) {
                                 ) : (
                                     <Image src={ProfileIcon} width='80px' height='80px' alt='avatar' />
                                 )}
-                                <EditableField isEdit={isEdit} width='30%' value={profile?.name || 'asiya'} />
-                                <EditableField isEdit={isEdit} value={profile?.description || 'build things'} />
-                                <EditableField isEdit={isEdit} value={profile?.twitter || 'asiya_asha'} />
+                                {profile?.name && (
+                                    <>
+                                        <EditableField isEdit={isEdit} width='30%' value={profile?.name} />
+                                        <EditableField isEdit={isEdit} value={profile?.description} />
+                                        <EditableField isEdit={isEdit} value={profile?.twitter} />
+                                    </>
+                                )}
                             </form>
                         ) : (
                             <List data={mockCProfile} />
