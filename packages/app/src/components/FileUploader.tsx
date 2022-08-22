@@ -1,5 +1,4 @@
 import { Input, FormControl, FormLabel, InputGroup, InputLeftElement, FormErrorMessage, Icon } from '@chakra-ui/react'
-import { FiFile } from 'react-icons/fi'
 import { useController } from 'react-hook-form'
 import { useRef } from 'react'
 
@@ -17,9 +16,6 @@ export const FileUploader = ({ name, placeholder, acceptedFileTypes, control, ch
         <FormControl id='pfp' isInvalid={invalid}>
             <FormLabel htmlFor='writeUpFile'>{children}</FormLabel>
             <InputGroup>
-                <InputLeftElement pointerEvents='none'>
-                    <Icon as={FiFile} />
-                </InputLeftElement>
                 <input
                     type='file'
                     onChange={event => onChange(event?.target?.files?.[0])}
