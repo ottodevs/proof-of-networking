@@ -14,10 +14,8 @@ import {
     InputGroup,
     Button,
     Flex,
-    Box,
 } from '@chakra-ui/react'
-import AccountModal from '~/components/AccountModal'
-import ImageMask from '~/components/ImageMask'
+import AccountModal from '../components/AccountModal'
 
 import AvatarSvg from '../media/avatar.svg'
 import ScanSvg from '../media/scan.svg'
@@ -62,24 +60,18 @@ export default function Scan({ profile }: any) {
     function renderQrCode() {
         return (
             <Heading>
-                {profile?.pfp ? (
-                    <Box ml={'86px'}>
-                        <ImageMask imageCid={profile?.pfp} />
-                    </Box>
-                ) : (
-                    <Image src={AvatarSvg} width='80px' height='80px' alt='avatar' />
-                )}
+                <Image width='160px' height='160px' src={AvatarSvg} alt='avatar' />
                 <Text mt={2}>{name || 'Anon'}</Text>
                 <div
                     style={{
                         background: 'white',
                         height: 'auto',
                         padding: '40px',
-                        maxWidth: 326,
+                        maxWidth: 346,
                         marginTop: '30px',
                         width: '100%',
                     }}>
-                    <QRCode size={286} style={{ height: 'auto', maxWidth: '100%', width: '100%' }} value={did} />
+                    <QRCode size={306} style={{ height: 'auto', maxWidth: '100%', width: '100%' }} value={did} />
                 </div>
             </Heading>
         )

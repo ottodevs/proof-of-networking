@@ -1,9 +1,8 @@
 import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useAccount } from 'wagmi'
-import { Box, Heading, Container, Text, Stack, VStack, Spinner } from '@chakra-ui/react'
+import { Box, Heading, Container, Text, Stack, VStack } from '@chakra-ui/react'
 import { useOrbis } from '~/hooks'
-import { useIsMounted } from '~/hooks/useIsMounted'
 import Scan from '~/components/Scan'
 import NewUser from '~/components/NewUser'
 import { CustomConnect } from '~/components/CustomConnect'
@@ -13,9 +12,24 @@ import LogoSvg from '../media/logo.svg'
 import type { NextPage } from 'next'
 
 const Home: NextPage = () => {
-    const { profile } = useOrbis()
+    const [isOrbis, setIsOrbis] = useState(false)
+    const { profile, orbis } = useOrbis()
     const { isConnected } = useAccount()
-    const mounted = useIsMounted()
+
+    if (!orbis) {
+        throw new Error('useOrbis must be used within a OrbisProvider')
+    }
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const orbisConnection = await orbis.isConnected()
+            setIsOrbis(orbisConnection)
+        }
+
+        fetchData()
+            // make sure to catch any error
+            .catch(console.error)
+    }, [orbis])
 
     const renderLanding = (
         <>
@@ -34,18 +48,12 @@ const Home: NextPage = () => {
     return (
         <>
             <Container maxW={'3xl'}>
-                {!mounted ? (
-                    <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 5 }}>
-                        <Spinner />
-                    </Stack>
-                ) : (
-                    <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 5 }}>
-                        {!isConnected && renderLanding}
-                        {isConnected && profile?.name && <Scan profile={profile} />}
-                        {isConnected && !profile?.name && <NewUser />}
-                        {isConnected && <CeramicSessionComponent />}
-                    </Stack>
-                )}
+                <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 5 }}>
+                    {!isConnected && renderLanding}
+                    {isConnected && profile && <Scan profile={profile} />}
+                    {isOrbis && isConnected && !profile && <NewUser />}
+                    {isConnected && <CeramicSessionComponent />}
+                </Stack>
             </Container>
         </>
     )
