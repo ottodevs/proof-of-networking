@@ -33,11 +33,11 @@ export default function Contacts() {
 
     return (
         <Container maxW={'3xl'}>
-            <Stack as={Box} textAlign={'left'} spacing={{ base: 6, md: 8 }} py={{ base: 10, md: 6 }} px={20}>
+            <Stack as={Box} textAlign={'left'} spacing={{ base: 6, md: 8 }} py={{ base: 10, md: 6 }}>
                 <Box width='400px'>
                     <Input value={searchVal} variant='filled' onChange={handleChange} placeholder='Search by Name' />
                 </Box>
-                <Stack mt={2} as={Box} textAlign={'center'} spacing={{ base: 6, md: 8 }}>
+                <Stack mt={2} as={Box} textAlign={'center'} spacing={{ base: 4, md: 8 }}>
                     {renderContacts}
                 </Stack>
             </Stack>
