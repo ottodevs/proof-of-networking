@@ -8,7 +8,6 @@ export interface PonProfile {
     name: string
     description: string
     twitter?: string
-    pfp?: string
 }
 
 const extractChainIdFromDid = (did: OrbisDid) => {
@@ -46,7 +45,6 @@ export const useOrbis = () => {
                     const ponProfile: PonProfile = {
                         did: currentChainDid.did,
                         name: currentChainDid.details.profile?.username,
-                        pfp: currentChainDid.details.profile?.pfp,
                         description: currentChainDid.details.profile?.description,
                         twitter: currentChainDid.details.profile?.data?.twitter,
                     }
@@ -73,7 +71,7 @@ export const useOrbis = () => {
         const orbisProfileData: Profile = {
             cover: '',
             description: profile.description,
-            pfp: profile.pfp,
+            pfp: '',
             username: profile.name,
             data: { twitter: profile.twitter },
         }
