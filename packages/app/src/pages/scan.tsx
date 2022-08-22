@@ -1,4 +1,3 @@
-import { useEffect } from 'react'
 import { Box, Container, Stack, Spinner } from '@chakra-ui/react'
 import { useOrbis } from '~/hooks'
 import Scan from '~/components/Scan'

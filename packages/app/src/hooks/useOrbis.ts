@@ -23,10 +23,11 @@ export const useOrbis = () => {
         throw new Error('useOrbis must be used within a OrbisProvider')
     }
 
-    const [profile, setProfile] = useState<PonProfile>()
-    const [dids, setDids] = useState<OrbisDid[]>()
     const { address, connector } = useAccount()
     const { chain } = useNetwork()
+
+    const [profile, setProfile] = useState<PonProfile>()
+    const [dids, setDids] = useState<OrbisDid[]>()
 
     useEffect(() => {
         const getDids = async () => {

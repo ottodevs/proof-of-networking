@@ -18,8 +18,8 @@ const CeramicSessionComponent: NextPage = () => {
         onDisconnect: () => saveCeramicSession(),
     })
 
-    // // TODO: move session management to hooks
-    // // TODO: connect orbis when session is restored and load profile
+    // TODO: move session management to hooks
+    // TODO: connect orbis when session is restored and load profile
     const saveCeramicSession = () => {
         // don't remove this item, rename to the account and reuse the same as lit-auth-signature
         const ceramicSession = localStorage.getItem('ceramic-session')
@@ -43,17 +43,6 @@ const CeramicSessionComponent: NextPage = () => {
         console.log('ceramic session restored!')
         return true
     }
-    // const restoreCeramicSession = async (address?: string) => {
-    //     console.log('hello address', address)
-    //     const lowerCaseAddress = address?.toLowerCase()
-    //     // Manage ceramic session restore
-    //     const ceramicPreviousSession = localStorage.getItem(`ceramic-session-${lowerCaseAddress}`)
-    //     if (ceramicPreviousSession) {
-    //         console.log('ceramic session found! restoring for address', lowerCaseAddress)
-    //         localStorage.setItem('ceramic-session', ceramicPreviousSession)
-    //         console.log('ceramic session restored!')
-    //     }
-    // }
 
     return <div>{connectedAddress}</div>
 }

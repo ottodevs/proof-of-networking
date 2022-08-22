@@ -28,7 +28,7 @@ export interface PonProofMessage {
 }
 
 export default function PonAdd({ didProfile }: InferGetStaticPropsType<typeof getStaticProps>) {
-    const { orbis } = useOrbis()
+    // const { orbis } = useOrbis()
     const [timestamp] = useState<number>(Date.now())
     const [message, setMessage] = useState<PonProofMessage>()
     const [signature, setSignature] = useState<string>()
@@ -64,14 +64,14 @@ export default function PonAdd({ didProfile }: InferGetStaticPropsType<typeof ge
                     // TODO: replace by dynamic event name
                     name: 'Polygon BUIDL IT : Summer 2022',
                 }
-                const resultA = await orbis.createConversation(content)
+                // const resultA = await orbis.createConversation(content)
                 // const resultA = await orbis.createTileDocument(
                 //     content,
                 //     ['handshake'], // context
                 //     conversationSchemaCommit,
                 //     'Proof of Networking',
                 // )
-                console.log('resultA', resultA)
+                // console.log('resultA', resultA)
                 // kjzl6cwe1jw1467modrz2ubownca4s7k8rwjixbh2274bkuzeikox7ozn6t790s
                 // const options = { did: 'did:pkh:eip155:80001:0xe13f6360ecd6df96290d5581fac6ab57b9c5fa56' }
                 // const result = await orbis.getConversations(options)
@@ -84,14 +84,14 @@ export default function PonAdd({ didProfile }: InferGetStaticPropsType<typeof ge
                 // .order('last_message_timestamp', { ascending: false })
                 // console.log('resultB', result)
                 // TODO: use PoN schema for encrypted messages
-                const result = await orbis.sendMessage({
-                    conversation_id: resultA.doc,
-                    // TODO: replace by signature + ponProofMsg stringified
-                    body: 'hello',
-                })
+                // const result = await orbis.sendMessage({
+                // conversation_id: resultA.doc,
+                // TODO: replace by signature + ponProofMsg stringified
+                // body: 'hello',
+                // })
                 // kjzl6cwe1jw149uh0cz9dqv3wuhpniy7jqmofx3n9l4mdsc9ju4xxp8zievjy9q
                 // https://node1.orbis.club/api/v0/streams/kjzl6cwe1jw149uh0cz9dqv3wuhpniy7jqmofx3n9l4mdsc9ju4xxp8zievjy9q?sync=1
-                console.log('result', result)
+                // console.log('result', result)
             }
         },
     })

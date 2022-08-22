@@ -1,7 +1,6 @@
 import { useRouter } from 'next/router'
-import { Heading, VStack, Button } from '@chakra-ui/react'
+import { VStack, Button } from '@chakra-ui/react'
 import UserProfile from '~/components/UserProfile'
-import { useOrbis } from '~/hooks'
 
 export default function ContactProfile() {
     // TODO: get contact profile from orbis
