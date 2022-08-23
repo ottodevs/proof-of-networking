@@ -8,7 +8,9 @@ import ScanSvg from '../../media/scan.svg'
 export default function Profile() {
     const { profile } = useOrbis()
     const router = useRouter()
+
     console.log(profile)
+
     function handleRedirect() {
         router.push({ pathname: '/scan' })
     }

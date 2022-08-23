@@ -18,8 +18,11 @@ const extractChainIdFromDid = (did: OrbisDid) => {
 
 export const useOrbis = () => {
     const orbis = useContext(OrbisContext)
-
+    const [error, setError] = useState('')
+    console.log('orbis')
+    console.log(orbis)
     if (!orbis) {
+        setError('useOrbis must be used within a OrbisProvider')
         throw new Error('useOrbis must be used within a OrbisProvider')
     }
 
@@ -29,10 +32,17 @@ export const useOrbis = () => {
     const [profile, setProfile] = useState<PonProfile>()
     const [dids, setDids] = useState<OrbisDid[]>()
 
+    console.log('DIDS')
+    console.log(dids)
+
     useEffect(() => {
         const getDids = async () => {
+            console.log('address')
+            console.log(address)
             if (address) {
                 const dids = await orbis.getDids(address)
+                console.log('did in get did')
+                console.log(dids)
                 setDids(dids.data)
             }
         }
@@ -44,6 +54,8 @@ export const useOrbis = () => {
             const getProfile = async () => {
                 const currentChainDid = dids.find(did => extractChainIdFromDid(did) === chain?.id.toString())
                 if (currentChainDid) {
+                    console.log('currentChainDid')
+                    console.log(currentChainDid)
                     const ponProfile: PonProfile = {
                         did: currentChainDid.did,
                         name: currentChainDid.details.profile?.username,
@@ -52,6 +64,8 @@ export const useOrbis = () => {
                         twitter: currentChainDid.details.profile?.data?.twitter,
                     }
                     setProfile(ponProfile)
+                } else {
+                    setError('Wrong Network')
                 }
             }
             getProfile()
@@ -86,5 +100,5 @@ export const useOrbis = () => {
         return false
     }
 
-    return { connect, orbis, profile, updateProfile }
+    return { connect, orbis, profile, updateProfile, error }
 }
