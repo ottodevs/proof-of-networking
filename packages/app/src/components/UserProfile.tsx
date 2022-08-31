@@ -4,12 +4,14 @@ import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Box, Container, Text, VStack, Stack, Flex, Button, FormControl } from '@chakra-ui/react'
-import { create } from 'ipfs-http-client'
+import { Box, Text, Flex, Button, FormControl } from '@chakra-ui/react'
+
 import { useOrbis } from '~/hooks'
-import List from './List'
+import { ipfsClient } from '~/lib'
 import { EditableField } from './Profile/EditableField'
 import { FileUploader } from './FileUploader'
+import NftGallery from './NftGallery'
+import List from './List'
 import ImageMask from './ImageMask'
 import ProfileIcon from '../media/avatar.svg'
 import ProfileOneIcon from '../media/p1.png'
@@ -40,6 +42,7 @@ export default function UserProfile({ isMyProfile, profile }: any) {
     const [updateMsg, setUpdateMsg] = useState('')
     const { handleSubmit, control } = useForm()
     const { connect, updateProfile } = useOrbis()
+    const [error, setError] = useState(null as any)
 
     const router = useRouter()
 
@@ -47,8 +50,15 @@ export default function UserProfile({ isMyProfile, profile }: any) {
         router.push('/contacts')
     }
 
-    const hadnleEdit = () => {
+    const handleEdit = () => {
         setIsEdit(!isEdit)
+    }
+
+    function handleDisplayMsg(setMessage: any, msg: string) {
+        setMessage(msg)
+        setTimeout(() => {
+            setMessage('')
+        }, 5000)
     }
 
     useEffect(() => {
@@ -57,42 +67,29 @@ export default function UserProfile({ isMyProfile, profile }: any) {
     }, [profile])
 
     async function onSubmit(fileVals: any) {
-        const projectId = process.env.NEXT_PUBLIC_INFURA_ID
-        const projectSecret = process.env.NEXT_PUBLIC_INFURA_SECRET
-        const auth = 'Basic ' + Buffer.from(projectId + ':' + projectSecret).toString('base64')
+        const newData = { ...profileData }
+        let ipfsPath = null
 
-        const client = create({
-            host: 'ipfs.infura.io',
-            port: 5001,
-            protocol: 'https',
-            apiPath: '/api/v0',
-            headers: {
-                authorization: auth,
-            },
-        })
+        if (fileVals.pfp) {
+            ipfsPath = await ipfsClient.add(fileVals.pfp)
+            newData.pfp = ipfsPath?.path
+        }
 
-        try {
-            const created = await client.add(fileVals.pfp)
+        const connected = await connect()
 
-            const newData = { ...profileData }
-            newData.pfp = created.path
+        if (connected) {
+            const { updated, error } = await updateProfile(newData)
 
-            const connected = await connect()
-
-            if (connected) {
-                const profileUpdated = await updateProfile(newData)
-                if (profileUpdated) {
-                    setPfpCid(created.path)
-                    setUpdateMsg('Updated')
-                    setTimeout(() => {
-                        setUpdateMsg('')
-                    }, 6000)
-                }
+            if (updated) {
+                setPfpCid(ipfsPath?.path)
+                handleDisplayMsg(setUpdateMsg, 'Updated')
             }
-        } catch (error) {
-            console.log(error)
+            if (error) {
+                handleDisplayMsg(setError, error)
+            }
         }
     }
+
     // TODO add note from orbis
     const renderNote = !isMyProfile && (
         <>
@@ -105,29 +102,7 @@ export default function UserProfile({ isMyProfile, profile }: any) {
             <Flex>Met at EthCC Hack and ETHBarcelona</Flex>
         </>
     )
-    const renderContacts = mockNfts.length && isMyProfile && (
-        <>
-            <Flex justifyContent='space-between' px={2}>
-                <Text fontWeight={400}>{mockNfts.length} Contacts</Text>
-                <Text cursor='pointer' fontWeight={400} color='blue.400' onClick={showAll}>
-                    All
-                </Text>
-            </Flex>
-            <Flex>
-                {mockNfts.map((item, index) => {
-                    return (
-                        <Box key={index} px={1}>
-                            <Link href={`/profile/${item.id}`}>
-                                <a>
-                                    <Image src={item.icon} alt='follower' />
-                                </a>
-                            </Link>
-                        </Box>
-                    )
-                })}
-            </Flex>
-        </>
-    )
+    const renderContacts = mockNfts.length && isMyProfile && <NftGallery data={mockNfts} />
 
     const profileImage = pfpCid ? (
         <ImageMask imageCid={pfpCid} />
@@ -145,70 +120,76 @@ export default function UserProfile({ isMyProfile, profile }: any) {
 
     return (
         <>
-            <Container maxW={'3xl'}>
-                <Stack as={Box} textAlign={'left'} spacing={{ base: 6, md: 8 }} py={{ base: 10, md: 6 }} px={20}>
-                    {isMyProfile && (
-                        <Flex color='blue.400' cursor='pointer' justifyContent={'flex-end'} onClick={hadnleEdit}>
-                            {isEdit ? (
-                                <Flex justifyContent='flex-end'>
-                                    <FormControl id='button'>
-                                        <Button onClick={handleSubmit(onSubmit)}>Update profile</Button>
-                                    </FormControl>
-                                </Flex>
-                            ) : (
-                                'Edit my page'
-                            )}
-                        </Flex>
-                    )}
-                    <Box p={1}>
-                        {isMyProfile ? (
-                            <>
-                                {renderProfileImageVal}
-                                {profile?.name && (
-                                    <>
-                                        <EditableField
-                                            isEdit={isEdit}
-                                            value={profileData?.name}
-                                            onSubmit={val =>
-                                                setProfileData({
-                                                    ...profileData,
-                                                    name: val,
-                                                })
-                                            }
-                                        />
-                                        <EditableField
-                                            isEdit={isEdit}
-                                            value={profileData?.description}
-                                            onSubmit={val =>
-                                                setProfileData({
-                                                    ...profileData,
-                                                    description: val,
-                                                })
-                                            }
-                                        />
-                                        <EditableField
-                                            isEdit={isEdit}
-                                            value={profileData?.twitter}
-                                            onSubmit={val =>
-                                                setProfileData({
-                                                    ...profileData,
-                                                    twitter: val,
-                                                })
-                                            }
-                                        />
-                                    </>
-                                )}
-                                <Text color='red.500'>{updateMsg}</Text>
-                            </>
+            {isMyProfile && (
+                <>
+                    <Text color='red.400'>{error}</Text>
+                    <Flex
+                        fontWeight='bold'
+                        letterSpacing='1px'
+                        color='cyan.400'
+                        cursor='pointer'
+                        justifyContent={'flex-end'}
+                        onClick={handleEdit}>
+                        {isEdit ? (
+                            <Flex justifyContent='flex-end'>
+                                <FormControl id='button'>
+                                    <Button onClick={handleSubmit(onSubmit)}>Update profile</Button>
+                                </FormControl>
+                            </Flex>
                         ) : (
-                            <List data={mockCProfile} />
+                            'Edit my page'
                         )}
-                    </Box>
-                    {renderContacts}
-                    {renderNote}
-                    <Box>Prefered contact method</Box>
-                </Stack>
-            </Container>
+                    </Flex>
+                </>
+            )}
+            <Box p={1}>
+                {isMyProfile ? (
+                    <>
+                        {renderProfileImageVal}
+                        {profile?.name && (
+                            <>
+                                <EditableField
+                                    fontSize='24px'
+                                    isEdit={isEdit}
+                                    value={profileData?.name}
+                                    onSubmit={val =>
+                                        setProfileData({
+                                            ...profileData,
+                                            name: val,
+                                        })
+                                    }
+                                />
+                                <EditableField
+                                    isEdit={isEdit}
+                                    value={profileData?.description}
+                                    onSubmit={val =>
+                                        setProfileData({
+                                            ...profileData,
+                                            description: val,
+                                        })
+                                    }
+                                />
+                                <EditableField
+                                    isEdit={isEdit}
+                                    value={profileData?.twitter}
+                                    onSubmit={val =>
+                                        setProfileData({
+                                            ...profileData,
+                                            twitter: val,
+                                        })
+                                    }
+                                />
+                            </>
+                        )}
+                        <Text color='red.500'>{updateMsg}</Text>
+                    </>
+                ) : (
+                    <List data={mockCProfile} />
+                )}
+            </Box>
+            {renderContacts}
+            {renderNote}
+            <Box>Prefered contact method</Box>
         </>
     )
 }

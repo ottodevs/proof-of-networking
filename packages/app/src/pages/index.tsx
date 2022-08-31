@@ -1,5 +1,7 @@
+import { useEffect } from 'react'
 import Image from 'next/image'
-import { Box, Heading, Container, Text, Stack, VStack } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
+import { Box, Heading, Container, Text, Stack, VStack, Spinner } from '@chakra-ui/react'
 import { useOrbis, useSafeConnected } from '~/hooks'
 import Scan from '~/components/Scan'
 import NewUser from '~/components/NewUser'
@@ -8,37 +10,63 @@ import CeramicSessionComponent from '~/components/CeramicSessionComponent'
 import LogoSvg from '../media/logo.svg'
 
 import type { NextPage } from 'next'
+import Head from 'next/head'
 
 const Home: NextPage = () => {
     const isConnected = useSafeConnected()
-    const { profile, orbis } = useOrbis()
+    const { profile, orbis, loadingDid, loadingProfile } = useOrbis()
+    const router = useRouter()
+    const isLoading = loadingDid || loadingProfile
 
     if (!orbis) {
         throw new Error('useOrbis must be used within a OrbisProvider')
     }
 
+    useEffect(() => {
+        if (!isLoading && orbis) {
+            if (isConnected && profile?.name) {
+                router.push('/contacts')
+            }
+
+            if (isConnected && !profile?.name) {
+                router.push('/create')
+            }
+        }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [isConnected, profile, loadingDid, loadingProfile])
+
     const renderLanding = (
-        <>
+        <Box mt={40}>
             <Heading lineHeight={'90%'}>
                 <Image src={LogoSvg} alt='logo' />
             </Heading>
-            <Text color={'gray.400'}>Proof of Networking</Text>
             <VStack gap={5}>
-                <Text color={'gray.600'}>Hi anon, log in with your wallet to create or view your profile</Text>
+                <Text mt={4} color={'gray.400'} fontSize='18px' letterSpacing='2px'>
+                    Proof of Networking
+                </Text>
+                <Text color={'gray.300'} fontSize='22px'>
+                    Hi Anon, log in with your wallet to create or view your profile
+                </Text>
                 <CustomConnect />
-                <Box mt={3}></Box>
             </VStack>
-        </>
+        </Box>
     )
 
     return (
         <>
+            <Head>
+                <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+            </Head>
             <Container maxW={'3xl'}>
                 <Stack as={Box} textAlign={'center'} spacing={{ base: 8, md: 14 }} py={{ base: 10, md: 5 }}>
                     {!isConnected && renderLanding}
-                    {isConnected && profile?.name && <Scan profile={profile} />}
-                    {isConnected && !profile?.name && <NewUser />}
-                    {isConnected && <CeramicSessionComponent />}
+                    {isConnected && (!orbis || isLoading) && (
+                        <Box>
+                            <Spinner />
+                        </Box>
+                    )}
+                    <CeramicSessionComponent />
                 </Stack>
             </Container>
         </>

@@ -11,8 +11,8 @@ const CeramicSessionComponent: NextPage = () => {
             console.log('sessionRestored', sessionRestored)
             if (!sessionRestored) {
                 console.log('orbisConnected on wallet connect?')
-                const orbisConneaced = await connect()
-                console.log('orbisConnected on wallet connect?', orbisConneaced)
+                const orbisConnected = await connect()
+                console.log('orbisConnected on wallet connect?', orbisConnected)
             }
         },
         onDisconnect: () => saveCeramicSession(),
@@ -44,7 +44,7 @@ const CeramicSessionComponent: NextPage = () => {
         return true
     }
 
-    return <div>{connectedAddress}</div>
+    return <div></div>
 }
 
 export default CeramicSessionComponent

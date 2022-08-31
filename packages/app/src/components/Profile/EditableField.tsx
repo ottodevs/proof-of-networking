@@ -6,11 +6,13 @@ export const EditableField = ({
     width,
     isEdit,
     onSubmit,
+    fontSize = 'md',
 }: {
     value: string | undefined
     width?: string
     isEdit: boolean
     onSubmit?: (e: any) => void
+    fontSize?: string
 }) => {
     return (
         <Editable
@@ -18,7 +20,7 @@ export const EditableField = ({
             textAlign='left'
             defaultValue={value}
             placeholder={value}
-            fontSize='md'
+            fontSize={fontSize}
             fontWeight={400}
             isPreviewFocusable={false}
             onSubmit={onSubmit}

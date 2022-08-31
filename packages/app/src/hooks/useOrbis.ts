@@ -19,6 +19,8 @@ const extractChainIdFromDid = (did: OrbisDid) => {
 export const useOrbis = () => {
     const orbis = useContext(OrbisContext)
     const [error, setError] = useState('')
+    const [loadingDid, setLoadingDid] = useState(false)
+    const [loadingProfile, setLoadingProfile] = useState(false)
 
     if (!orbis) {
         setError('useOrbis must be used within a OrbisProvider')
@@ -30,12 +32,15 @@ export const useOrbis = () => {
 
     const [profile, setProfile] = useState<PonProfile>()
     const [dids, setDids] = useState<OrbisDid[]>()
+
     useEffect(() => {
         const getDids = async () => {
             if (address) {
+                setLoadingDid(true)
                 const dids = await orbis.getDids(address)
 
                 setDids(dids.data)
+                setLoadingDid(false)
             }
         }
         getDids()
@@ -44,7 +49,9 @@ export const useOrbis = () => {
     useEffect(() => {
         if (dids) {
             const getProfile = async () => {
+                setLoadingProfile(true)
                 const currentChainDid = dids.find(did => extractChainIdFromDid(did) === chain?.id.toString())
+
                 if (currentChainDid) {
                     const ponProfile: PonProfile = {
                         did: currentChainDid.did,
@@ -57,6 +64,7 @@ export const useOrbis = () => {
                 } else {
                     setError('Wrong Network')
                 }
+                setLoadingProfile(false)
             }
             getProfile()
         }
@@ -86,10 +94,11 @@ export const useOrbis = () => {
 
         if (result.status === 200) {
             setProfile(profile)
-            return true
+            return { error: false, updated: true }
         }
-        return false
+
+        return { error: result?.error?.message, updated: false }
     }
 
-    return { connect, orbis, profile, updateProfile, error }
+    return { connect, orbis, profile, updateProfile, error, loadingDid, loadingProfile }
 }

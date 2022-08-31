@@ -1,4 +1,4 @@
-import { Input, FormControl, FormLabel, InputGroup, InputLeftElement, FormErrorMessage, Icon } from '@chakra-ui/react'
+import { Input, FormControl, FormLabel, InputGroup, FormErrorMessage, Icon } from '@chakra-ui/react'
 import { useController } from 'react-hook-form'
 import { useRef } from 'react'
 

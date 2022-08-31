@@ -4,8 +4,14 @@ import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons'
 import { useRouter } from 'next/router'
 import { PropsWithoutRef } from 'react'
 
-export const NavMobile = ({ links }: PropsWithoutRef<{ links: { route: string; title: string }[] }>) => {
+type TNavMobile = {
+    links: { route: string; title: string }[]
+    disconnect: any
+}
+
+export const NavMobile = ({ links, disconnect }: PropsWithoutRef<TNavMobile>) => {
     const { push } = useRouter()
+
     return (
         <Box display={{ md: 'none' }}>
             <Menu>
@@ -24,6 +30,7 @@ export const NavMobile = ({ links }: PropsWithoutRef<{ links: { route: string; t
                                     {title}
                                 </MenuItem>
                             ))}
+                            <MenuItem>{disconnect}</MenuItem>
                             <MenuDivider />
                             <HStack px='12.8px' justifyContent={'left'}>
                                 <ToggleColorMode />
