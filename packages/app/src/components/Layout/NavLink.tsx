@@ -9,7 +9,7 @@ export const NavLink = (props: { route: string; children: React.ReactNode }) => 
             <ChakraLink
                 {...rest}
                 px={2}
-                py={1}
+                py={2}
                 rounded={'md'}
                 _hover={{
                     textDecoration: 'none',
