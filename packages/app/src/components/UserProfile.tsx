@@ -50,7 +50,7 @@ export default function UserProfile({ isMyProfile, profile }: any) {
         router.push('/contacts')
     }
 
-    const hadnleEdit = () => {
+    const handleEdit = () => {
         setIsEdit(!isEdit)
     }
 
@@ -85,8 +85,7 @@ export default function UserProfile({ isMyProfile, profile }: any) {
                 handleDisplayMsg(setUpdateMsg, 'Updated')
             }
             if (error){
-              console.log(error)
-              handleDisplayMsg(setError, error)
+                handleDisplayMsg(setError, error)
             } 
         }
     }
@@ -124,25 +123,27 @@ export default function UserProfile({ isMyProfile, profile }: any) {
     return (
         <>
             {isMyProfile && (
-                <Flex
-                    fontWeight="bold"
-                    letterSpacing="1px"
-                    color='cyan.400'
-                    cursor='pointer'
-                    justifyContent={'flex-end'}
-                    onClick={hadnleEdit}
-                >
-                    {isEdit ? (
-                        <Flex justifyContent='flex-end'>
-                            <FormControl id='button'>
-                                <Button onClick={handleSubmit(onSubmit)}>Update profile</Button>
-                            </FormControl>
-                            <Text color="red.400">{error}</Text>
-                        </Flex>
-                    ) : (
-                        'Edit my page'
-                    )}
-                </Flex>
+                <>
+                    <Text color="red.400">{error}</Text>
+                    <Flex
+                        fontWeight="bold"
+                        letterSpacing="1px"
+                        color='cyan.400'
+                        cursor='pointer'
+                        justifyContent={'flex-end'}
+                        onClick={handleEdit}
+                    >
+                        {isEdit ? (
+                            <Flex justifyContent='flex-end'>
+                                <FormControl id='button'>
+                                    <Button onClick={handleSubmit(onSubmit)}>Update profile</Button>
+                                </FormControl>
+                            </Flex>
+                        ) : (
+                          'Edit my page'
+                          )}
+                    </Flex>
+                </>
             )}
             <Box p={1}>
                 {isMyProfile ? (
