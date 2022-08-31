@@ -21,15 +21,15 @@ export default function Contacts() {
     const router = useRouter()
 
     useEffect(() => {
-      if (!isConnected) {
-        router.push('/');
-      }
+        if (!isConnected) {
+            router.push('/')
+        }
     }, [])
 
     const handleChange = (event: any) => setSearchVal(event.target.value)
-    
+
     function handleScanRedirect() {
-      router.push({ pathname: '/scan' })
+        router.push({ pathname: '/scan' })
     }
 
     const data = searchVal
@@ -44,23 +44,20 @@ export default function Contacts() {
                         <ListItem {...item} />
                     </a>
                 </Link>
-                <Divider color="white" opacity="1" orientation='horizontal' />
+                <Divider color='white' opacity='1' orientation='horizontal' />
             </Box>
         )
     })
 
     return (
-      <Stack as={Box} textAlign={'center'} width="100%" spacing={{ base: 6, md: 8 }} py={{ base: 10, md: 6 }}>
-          <Box>
-              <Input value={searchVal} variant='filled' onChange={handleChange} placeholder='Search by Name' />
-          </Box>
-          <div>
-              {renderContacts}
-          </div>
-          <Button onClick={handleScanRedirect} h={42} p='10px' backgroundColor={'#ffffff3d'}>
-              <Image src={ScanSvg} alt='scan' />
-          </Button>
-      </Stack>
+        <Stack as={Box} textAlign={'center'} width='100%' spacing={{ base: 6, md: 8 }} py={{ base: 10, md: 6 }}>
+            <Box>
+                <Input value={searchVal} variant='filled' onChange={handleChange} placeholder='Search by Name' />
+            </Box>
+            <div>{renderContacts}</div>
+            <Button onClick={handleScanRedirect} h={42} p='10px' backgroundColor={'#ffffff3d'}>
+                <Image src={ScanSvg} alt='scan' />
+            </Button>
+        </Stack>
     )
 }
-

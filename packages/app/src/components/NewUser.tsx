@@ -31,14 +31,14 @@ export default function NewUser() {
         const newData = { ...data }
 
         if (data.pfp) {
-          try {
-            const created = await ipfsClient.add(data.pfp)
-            newData.pfp = created.path
-          } catch (error) {
-            setError(error)
-          } 
+            try {
+                const created = await ipfsClient.add(data.pfp)
+                newData.pfp = created.path
+            } catch (error) {
+                setError(error)
+            }
         }
-       
+
         const connected = await connect()
 
         if (connected) {
@@ -57,7 +57,7 @@ export default function NewUser() {
             <Text fontSize='l' mt={{ sm: 3, md: 3, lg: 5 }} color='gray.500'>
                 Set up your data
             </Text>
-            <Text color="red.400">{error}</Text>
+            <Text color='red.400'>{error}</Text>
             <FormControl id='name' isRequired>
                 <FormLabel>Nickname</FormLabel>
                 <InputGroup borderColor='#E0E1E7'>

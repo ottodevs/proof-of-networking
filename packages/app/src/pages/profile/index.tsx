@@ -16,9 +16,9 @@ export default function Profile() {
     console.log(profile)
 
     useEffect(() => {
-      if (!isConnected) {
-        router.push('/');
-      }
+        if (!isConnected) {
+            router.push('/')
+        }
     }, [isConnected])
 
     function handleRedirect() {
@@ -26,11 +26,14 @@ export default function Profile() {
     }
 
     // TODO: remove test values
-    return isConnected &&
-      <>
-          <UserProfile profile={profile} isMyProfile={true} />
-          <Button onClick={handleRedirect} h={42} p='10px' backgroundColor={'#ffffff3d'}>
-              <Image src={ScanSvg} alt='scan' />
-          </Button>
-      </>
+    return (
+        isConnected && (
+            <>
+                <UserProfile profile={profile} isMyProfile={true} />
+                <Button onClick={handleRedirect} h={42} p='10px' backgroundColor={'#ffffff3d'}>
+                    <Image src={ScanSvg} alt='scan' />
+                </Button>
+            </>
+        )
+    )
 }

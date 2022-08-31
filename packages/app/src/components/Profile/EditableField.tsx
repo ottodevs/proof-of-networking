@@ -6,7 +6,7 @@ export const EditableField = ({
     width,
     isEdit,
     onSubmit,
-    fontSize="md"
+    fontSize = 'md',
 }: {
     value: string | undefined
     width?: string

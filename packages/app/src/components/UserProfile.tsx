@@ -10,7 +10,7 @@ import { useOrbis } from '~/hooks'
 import { ipfsClient } from '~/lib'
 import { EditableField } from './Profile/EditableField'
 import { FileUploader } from './FileUploader'
-import NftGallery from './NftGallery';
+import NftGallery from './NftGallery'
 import List from './List'
 import ImageMask from './ImageMask'
 import ProfileIcon from '../media/avatar.svg'
@@ -54,7 +54,7 @@ export default function UserProfile({ isMyProfile, profile }: any) {
         setIsEdit(!isEdit)
     }
 
-    function handleDisplayMsg(setMessage:any, msg:string) {
+    function handleDisplayMsg(setMessage: any, msg: string) {
         setMessage(msg)
         setTimeout(() => {
             setMessage('')
@@ -68,25 +68,25 @@ export default function UserProfile({ isMyProfile, profile }: any) {
 
     async function onSubmit(fileVals: any) {
         const newData = { ...profileData }
-        let ipfsPath = null;
+        let ipfsPath = null
 
         if (fileVals.pfp) {
-          ipfsPath = await ipfsClient.add(fileVals.pfp)
-          newData.pfp = ipfsPath?.path
+            ipfsPath = await ipfsClient.add(fileVals.pfp)
+            newData.pfp = ipfsPath?.path
         }
 
         const connected = await connect()
 
         if (connected) {
-            const { updated, error }  = await updateProfile(newData)
+            const { updated, error } = await updateProfile(newData)
 
             if (updated) {
                 setPfpCid(ipfsPath?.path)
                 handleDisplayMsg(setUpdateMsg, 'Updated')
             }
-            if (error){
+            if (error) {
                 handleDisplayMsg(setError, error)
-            } 
+            }
         }
     }
 
@@ -102,9 +102,7 @@ export default function UserProfile({ isMyProfile, profile }: any) {
             <Flex>Met at EthCC Hack and ETHBarcelona</Flex>
         </>
     )
-    const renderContacts = mockNfts.length && isMyProfile && (
-      <NftGallery data={mockNfts} />
-    )
+    const renderContacts = mockNfts.length && isMyProfile && <NftGallery data={mockNfts} />
 
     const profileImage = pfpCid ? (
         <ImageMask imageCid={pfpCid} />
@@ -124,15 +122,14 @@ export default function UserProfile({ isMyProfile, profile }: any) {
         <>
             {isMyProfile && (
                 <>
-                    <Text color="red.400">{error}</Text>
+                    <Text color='red.400'>{error}</Text>
                     <Flex
-                        fontWeight="bold"
-                        letterSpacing="1px"
+                        fontWeight='bold'
+                        letterSpacing='1px'
                         color='cyan.400'
                         cursor='pointer'
                         justifyContent={'flex-end'}
-                        onClick={handleEdit}
-                    >
+                        onClick={handleEdit}>
                         {isEdit ? (
                             <Flex justifyContent='flex-end'>
                                 <FormControl id='button'>
@@ -140,8 +137,8 @@ export default function UserProfile({ isMyProfile, profile }: any) {
                                 </FormControl>
                             </Flex>
                         ) : (
-                          'Edit my page'
-                          )}
+                            'Edit my page'
+                        )}
                     </Flex>
                 </>
             )}
@@ -152,7 +149,7 @@ export default function UserProfile({ isMyProfile, profile }: any) {
                         {profile?.name && (
                             <>
                                 <EditableField
-                                    fontSize="24px"
+                                    fontSize='24px'
                                     isEdit={isEdit}
                                     value={profileData?.name}
                                     onSubmit={val =>

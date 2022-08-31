@@ -6,4 +6,4 @@ const Create: NextPage = () => {
     return <NewUser />
 }
 
-export default Create;
+export default Create

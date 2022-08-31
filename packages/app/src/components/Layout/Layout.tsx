@@ -23,11 +23,17 @@ export const Layout = ({ children }: PropsWithChildren) => {
                     <NavBar />
                 </SlideFade>
                 <Fade in={animationB}>
-                    <Container mt={{md: 20, base: 6}} mb={{md: 20, base: 0}} maxWidth={['100%', '80%', '60%']}>
+                    <Container mt={{ md: 20, base: 6 }} mb={{ md: 20, base: 0 }} maxWidth={['100%', '80%', '60%']}>
                         <VStack>
-                          <Stack as={Box} width="100%" textAlign={'left'} spacing={{ base: 6, md: 8 }} py={{ base: 4, md: 10 }} px={{ base: 0, md: 6 }}>
-                            {children}
-                          </Stack>
+                            <Stack
+                                as={Box}
+                                width='100%'
+                                textAlign={'left'}
+                                spacing={{ base: 6, md: 8 }}
+                                py={{ base: 4, md: 10 }}
+                                px={{ base: 0, md: 6 }}>
+                                {children}
+                            </Stack>
                         </VStack>
                     </Container>
                 </Fade>

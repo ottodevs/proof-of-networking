@@ -96,7 +96,7 @@ export const useOrbis = () => {
             setProfile(profile)
             return { error: false, updated: true }
         }
-        
+
         return { error: result?.error?.message, updated: false }
     }
 
