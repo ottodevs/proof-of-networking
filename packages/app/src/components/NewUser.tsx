@@ -30,13 +30,26 @@ export default function NewUser() {
     const onSubmit = async (data: any) => {
         const newData = { ...data }
 
-        if (data.pfp) {
+        if (newData.cover) {
+            try {
+                const created = await ipfsClient.add(data.cover)
+                newData.cover = created.path
+            } catch (error) {
+                setError(error)
+            }
+        } else {
+            newData.cover = ''
+        }
+
+        if (newData.pfp) {
             try {
                 const created = await ipfsClient.add(data.pfp)
                 newData.pfp = created.path
             } catch (error) {
                 setError(error)
             }
+        } else {
+            newData.pfp = ''
         }
 
         const connected = await connect()
@@ -51,7 +64,11 @@ export default function NewUser() {
 
     return (
         <VStack spacing='6'>
-            <Heading fontWeight={600} fontSize={{ base: '3xl', sm: '4xl', md: '5xl' }} lineHeight={'110%'}>
+            <Heading
+                fontWeight={600}
+                fontSize={{ base: '3xl', sm: '4xl', md: '5xl' }}
+                lineHeight={'110%'}
+                letterSpacing='1px'>
                 New Profile
             </Heading>
             <Text fontSize='l' mt={{ sm: 3, md: 3, lg: 5 }} color='gray.500'>
@@ -70,6 +87,9 @@ export default function NewUser() {
                     />
                 </InputGroup>
             </FormControl>
+            <FileUploader name='cover' acceptedFileTypes='image/*' placeholder='Your cover image' control={control}>
+                Cover image
+            </FileUploader>
             <FileUploader name='pfp' acceptedFileTypes='image/*' placeholder='Your avatar' control={control}>
                 PFP
             </FileUploader>

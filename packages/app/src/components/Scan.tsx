@@ -61,7 +61,7 @@ export default function Scan({ profile }: any) {
 
     function renderQrCode() {
         return (
-            <Heading>
+            <Box>
                 {profile?.pfp ? (
                     <Box ml={'86px'}>
                         <ImageMask imageCid={profile?.pfp} />
@@ -74,14 +74,13 @@ export default function Scan({ profile }: any) {
                     style={{
                         background: 'white',
                         height: 'auto',
-                        padding: '40px',
                         maxWidth: 326,
                         marginTop: '30px',
                         width: '100%',
                     }}>
                     <QRCode size={286} style={{ height: 'auto', maxWidth: '100%', width: '100%' }} value={did} />
                 </div>
-            </Heading>
+            </Box>
         )
     }
 

@@ -48,6 +48,9 @@ const Home: NextPage = () => {
                 <Text color={'gray.300'} fontSize='22px'>
                     Hi Anon, log in with your wallet to create or view your profile
                 </Text>
+                <Text color={'blue.300'} fontSize='22px'>
+                    Recommended newtwork is Polygon
+                </Text>
                 <CustomConnect />
             </VStack>
         </Box>
