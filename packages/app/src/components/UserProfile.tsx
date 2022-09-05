@@ -132,6 +132,9 @@ export default function UserProfile({ isMyProfile, profile }: any) {
                         onClick={handleEdit}>
                         {isEdit ? (
                             <Flex justifyContent='flex-end'>
+                                <Button variant='outline' mr={4} onClick={() => setIsEdit(false)}>
+                                    Cancel
+                                </Button>
                                 <FormControl id='button'>
                                     <Button onClick={handleSubmit(onSubmit)}>Update profile</Button>
                                 </FormControl>

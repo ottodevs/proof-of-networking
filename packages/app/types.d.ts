@@ -1,6 +1,7 @@
 declare module '@orbisclub/orbis-sdk' {
     export class Orbis {
         connect(provider: ethers.Provider, lit?: boolean): Promise<OrbisResponse>
+        logout(): Promise<OrbisResponse>
         getDids(address: string): Promise<OrbisResponse>
         getMessages(conversation_id: string): Promise<OrbisResponse>
         isConnected(): Promise<OrbisResponse>
@@ -31,6 +32,7 @@ declare module '@orbisclub/orbis-sdk' {
 
     export interface Profile {
         pfp?: string
+        cover?: string
         username: string
         description: string
         cover: string

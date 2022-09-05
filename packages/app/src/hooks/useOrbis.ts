@@ -9,6 +9,7 @@ export interface PonProfile {
     description: string
     twitter?: string
     pfp?: string
+    cover?: string
 }
 
 const extractChainIdFromDid = (did: OrbisDid) => {
@@ -29,12 +30,13 @@ export const useOrbis = () => {
 
     const { address, connector } = useAccount()
     const { chain } = useNetwork()
-
+    console.log({ address })
     const [profile, setProfile] = useState<PonProfile>()
     const [dids, setDids] = useState<OrbisDid[]>()
-
+    console.log({ profile })
     useEffect(() => {
         const getDids = async () => {
+            const provider = await connector?.getProvider()
             if (address) {
                 setLoadingDid(true)
                 const dids = await orbis.getDids(address)
@@ -73,6 +75,7 @@ export const useOrbis = () => {
     const connect = async () => {
         const orbisConnection = await orbis.isConnected()
         const isOrbisConnected = orbisConnection.status === 200
+
         if (!isOrbisConnected) {
             const provider = await connector?.getProvider()
             await orbis.connect(provider)
@@ -83,9 +86,9 @@ export const useOrbis = () => {
 
     const updateProfile = async (profile: PonProfile) => {
         const orbisProfileData: Profile = {
-            cover: '',
+            cover: profile.cover || '',
             description: profile.description,
-            pfp: profile.pfp,
+            pfp: profile.pfp || '',
             username: profile.name,
             data: { twitter: profile.twitter },
         }

@@ -7,6 +7,7 @@ import { ToggleColorMode } from './ToggleColorMode'
 import { NavLink } from './NavLink'
 import { NavMobile } from './NavMobile'
 import LogoSvg from '~/media/logo.svg'
+import { useOrbis } from '~/hooks'
 
 const links = [
     { route: '/profile', title: 'Profile' },
@@ -20,12 +21,20 @@ const displayNonMobile = {
 export const NavBar = () => {
     const { address } = useAccount()
     const { disconnect } = useDisconnect()
+    const { orbis } = useOrbis()
     const router = useRouter()
 
     const isHomePage = router.pathname === '/'
 
     function handleDisconnect() {
+        async function logoutOrbis() {
+            let res = await orbis.logout()
+            console.log('logout orbis')
+            console.log(res)
+        }
+
         disconnect()
+        logoutOrbis()
         router.push('/')
     }
     const renderDisconnect = address && (
